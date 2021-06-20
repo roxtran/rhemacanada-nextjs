@@ -68,15 +68,19 @@ const AboutWrapper = styled(Container)`
 `
 const AboutCards = styled(Cards)`
   a:hover {
+    h2 {
+      color: #fff;
+    }
     .line {
       background-color: #fff;
     }
   }
   h2 {
     color: var(--blue);
+    z-index: 1;
   }
   .line {
-    width: 30%;
+    width: 25%;
     height: 1px;
     background-color: var(--text-color);
     margin: 1.5rem 0;
