@@ -112,7 +112,7 @@ const HeroWrapper = styled.section`
   }
   .slide {
     opacity: 0;
-    transition-duration: 1s easeInOut;
+    transition-duration: 1s;
     transform: scale(1.15);
   }
   .slide.active {
