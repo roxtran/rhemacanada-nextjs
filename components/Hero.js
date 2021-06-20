@@ -78,7 +78,7 @@ const HeroWrapper = styled.section`
   overflow: hidden;
   .img-wrapper {
     width: 100vw;
-    height: 70vh;
+    height: 68vh;
   }
   .img-overlay {
     position: absolute;

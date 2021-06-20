@@ -87,7 +87,6 @@ const AboutCards = styled(Cards)`
     z-index: 1;
   }
   .card {
-    width: 320px;
     height: 100%;
     padding: 3rem;
     border: 3px solid #fff;
