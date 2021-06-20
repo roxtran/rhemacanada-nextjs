@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '../styles/GlobalStyle'
 import styled from 'styled-components'
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/Fa'
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import Link from 'next/link'
 
 export default function Navbar() {

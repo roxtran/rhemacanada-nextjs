@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container } from '../styles/GlobalStyle'
 import styled from 'styled-components'
-import { FaChurch, FaCubes } from 'react-icons/Fa'
-import { IoMdSchool } from 'react-icons/Io'
+import { FaChurch, FaCubes } from 'react-icons/fa'
+import { IoMdSchool } from 'react-icons/io'
 
 export default function Services() {
   return (

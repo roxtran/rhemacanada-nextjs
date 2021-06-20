@@ -6,7 +6,7 @@ import Image from 'next/image'
 import {
   IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,
-} from 'react-icons/Io'
+} from 'react-icons/io'
 
 export default function Hero() {
   const [current, setCurrent] = useState(0)

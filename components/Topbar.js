@@ -2,8 +2,8 @@ import React from 'react'
 import { Container, ImgWrapper } from '../styles/GlobalStyle'
 import Image from 'next/image'
 import styled from 'styled-components'
-import { HiMail } from 'react-icons/Hi'
-import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/Fa'
+import { HiMail } from 'react-icons/hi'
+import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 import Link from 'next/link'
 
 export default function Topbar() {
