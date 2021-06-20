@@ -56,7 +56,7 @@ const AboutWrapper = styled(Container)`
     top: 0;
     left: 0;
     width: 100vw;
-    height: 28rem;
+    height: 56%;
     background: var(--blue);
     z-index: 0;
   }
