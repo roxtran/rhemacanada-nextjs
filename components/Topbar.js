@@ -75,6 +75,7 @@ const TopbarWrapper = styled.div`
     align-items: center;
     margin-left: 2rem;
     font-size: 0.9rem;
+    font-weight: 400;
   }
   .icon {
     width: 42px;
