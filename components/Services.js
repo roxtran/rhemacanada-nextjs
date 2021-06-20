@@ -13,21 +13,21 @@ export default function Services() {
           <div className='card'>
             <div className='color-overlay'></div>
             <FaChurch className='icon' />
-            <h2>Church</h2>
+            <h3>Church</h3>
           </div>
         </a>
         <a href='http://kingscollegepsc.ca/' target='_blank'>
           <div className='card'>
             <div className='color-overlay'></div>
             <IoMdSchool className='icon' />
-            <h2>Education</h2>
+            <h3>Education</h3>
           </div>
         </a>
         <a href='http://rfcanada.org/' target='_blank'>
           <div className='card'>
             <div className='color-overlay'></div>
             <FaCubes className='icon' />
-            <h2>Foundation</h2>
+            <h3>Foundation</h3>
           </div>
         </a>
       </Cards>
@@ -47,7 +47,7 @@ export const Cards = styled.div`
   display: flex;
   a:hover {
     color: #fff;
-    h2 {
+    h3 {
       color: #fff;
       z-index: 1;
     }

@@ -126,12 +126,12 @@ const HeroWrapper = styled.section`
     top: 45%;
     left: 10%;
     h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.25rem;
     }
     p {
       font-size: 1.2rem;
-      font-weight: 500;
+      font-weight: 300;
     }
     h1,
     p {

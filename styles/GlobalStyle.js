@@ -10,10 +10,10 @@ export const GlobalStyle = createGlobalStyle`
   html, body {
     background: #fff;
     color: var(--text-color);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
     width: 100vw;
     overflow-x: hidden;
-    font-weight: 400;
+    font-weight: 300;
   }
   a {
     cursor: pointer;
@@ -28,13 +28,13 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--heading-color);
   }
   h1 {
-    font-size: 3.25rem;
+    font-size: 3rem;
   }
   h2 {
     font-size: 1.75rem;
   }
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   h4 {
     font-size: 1.2rem;
