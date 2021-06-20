@@ -9,52 +9,36 @@ export default function About() {
       <h1>About Us</h1>
       <div className='blue-bg'></div>
       <AboutCards>
-        <a href='#'>
+        <a>
+          <div className='card'>
+            <div className='color-overlay'></div>
+            <h2>Our Vision</h2>
+            <div className='line'></div>
+            <p>We empower people to live better lives.</p>
+          </div>
+        </a>
+        <a>
           <div className='card'>
             <div className='color-overlay'></div>
             <h2>Our Mission</h2>
             <div className='line'></div>
             <p>
-              Our Roadmap starts with our enduring mission which declares our
-              organizational purpose and serves as the standard against which
-              all of our actions and decisions are measured. Our mission is:
-            </p>
-            <q>
               We change and affect lives by offering products & services that
-              meet people at their point of need​
-            </q>
+              meet people at their point of need.
+            </p>
           </div>
         </a>
-        <a href='#'>
-          <div className='card'>
-            <div className='color-overlay'></div>
-            <h2>Our Vision</h2>
-            <div className='line'></div>
-            <p>
-              Our Roadmap starts with our enduring mission which declares our
-              organizational purpose and serves as the standard against which
-              all of our actions and decisions are measured. Our mission is:
-            </p>
-            <q>
-              We change and affect lives by offering products & services that
-              meet people at their point of need​
-            </q>
-          </div>
-        </a>
-        <a href='#'>
+        <a>
           <div className='card'>
             <div className='color-overlay'></div>
             <h2>Core Values</h2>
             <div className='line'></div>
+            <p>Rhema is committed to I.C.I.T.E (EYE-SIGHT)</p>
             <p>
-              Our Roadmap starts with our enduring mission which declares our
-              organizational purpose and serves as the standard against which
-              all of our actions and decisions are measured. Our mission is:
+              <strong>
+                Compassion, Integrity Teamwork, Excellence Innovation
+              </strong>
             </p>
-            <q>
-              We change and affect lives by offering products & services that
-              meet people at their point of need​
-            </q>
           </div>
         </a>
       </AboutCards>
@@ -87,6 +71,9 @@ const AboutCards = styled(Cards)`
     .line {
       background-color: #fff;
     }
+  }
+  h2 {
+    color: var(--blue);
   }
   .line {
     width: 30%;

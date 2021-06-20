@@ -131,6 +131,7 @@ const HeroWrapper = styled.section`
     }
     p {
       font-size: 1.2rem;
+      font-weight: 500;
     }
     h1,
     p {
