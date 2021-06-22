@@ -19,9 +19,6 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     color: var(--text-color);
     text-decoration: none;
-    &:hover {
-      color:var(--blue);
-    }
   }
   h1, h2, h3, h4 {
     font-weight: 600;

@@ -49,7 +49,7 @@ export default function About() {
 const AboutWrapper = styled(Container)`
   position: relative;
   flex-direction: column;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--grey-line);
 
   .blue-bg {
     position: absolute;
