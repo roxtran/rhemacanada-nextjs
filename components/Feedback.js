@@ -41,7 +41,6 @@ const FeedbackWrapper = styled(Container)`
       flex-flow: column wrap;
       justify-content: center;
       align-items: center;
-      font-size: 0.75rem;
     }
 
     p {
@@ -55,6 +54,8 @@ const FeedbackWrapper = styled(Container)`
       border: 1px solid var(--grey-line);
       border-radius: 5px;
       margin-bottom: 20px;
+      font-size: 0.85rem;
+      font-weight: 400;
 
       :focus {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -76,7 +77,7 @@ const FeedbackWrapper = styled(Container)`
       padding: 12px 36px;
       cursor: pointer;
       &:hover {
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
       }
     }
   }
