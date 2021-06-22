@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function Strategy() {
   return (
-    <StrategyWrapper id='strategy'>
+    <StyledStrategy id='strategy'>
       <div className='wrapper'>
         <div className='content'>
           <h1>Corporate Strategy</h1>
@@ -64,15 +64,15 @@ export default function Strategy() {
             </div>
           </div>
         </div>
-        <ImgWrapper className='img-wrapper'>
+        <ImgWrapper>
           <Image src='/img/strategy.jpg' layout='fill' objectFit='cover' />
         </ImgWrapper>
       </div>
-    </StrategyWrapper>
+    </StyledStrategy>
   )
 }
 
-const StrategyWrapper = styled(Container)`
+const StyledStrategy = styled(Container)`
   padding: 0;
   background-color: var(--light-grey-bg);
   .wrapper {
@@ -110,7 +110,7 @@ const StrategyWrapper = styled(Container)`
     font-weight: 600;
     margin: 0.5rem 0;
   }
-  .img-wrapper {
+  ${ImgWrapper} {
     height: 600px;
     width: 45%;
   }

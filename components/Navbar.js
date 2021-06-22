@@ -1,12 +1,11 @@
 import React from 'react'
-import { Container } from '../styles/GlobalStyle'
 import styled from 'styled-components'
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import Link from 'next/link'
 
 export const SocialIcons = () => {
   return (
-    <div className='icons'>
+    <StyledIcons>
       <a
         href='https://www.facebook.com/Rhemachristianministries/'
         target='_blank'
@@ -25,13 +24,13 @@ export const SocialIcons = () => {
       <a href='https://www.instagram.com/rhemacanada/?hl=en' target='_blank'>
         <FaInstagram className='icon' />
       </a>
-    </div>
+    </StyledIcons>
   )
 }
 
 export const Menu = () => {
   return (
-    <div className='menu'>
+    <StyledMenu>
       <Link href='#'>
         <a className='nav-link'>Home</a>
       </Link>
@@ -57,50 +56,52 @@ export const Menu = () => {
       >
         Book An Event
       </a>
-    </div>
+    </StyledMenu>
   )
 }
 
 export default function Navbar() {
   return (
-    <NavbarWrapper>
+    <StyledNavbar>
       <div className='wrapper'>
         <SocialIcons />
         <Menu />
       </div>
-    </NavbarWrapper>
+    </StyledNavbar>
   )
 }
 
-const NavbarWrapper = styled.nav`
+const StyledNavbar = styled.nav`
+  top: 80px;
+  height: 90px;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 5.5rem;
   width: 100vw;
   z-index: 10;
   background: rgba(255, 255, 255, 0.05);
-  padding: 1.25rem 0;
+  padding: 1.5rem 0;
   .wrapper {
     width: 1140px;
     display: flex;
     justify-content: space-between;
   }
-  .icons {
-    padding: 12px 0;
-  }
+`
+export const StyledIcons = styled.div`
+  padding: 12px 0;
+
   .icon {
     color: #fff;
     margin-right: 1rem;
   }
-  .menu {
-    display: flex;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
-    height: 90%;
-    padding: 12px 65px;
-  }
+`
+export const StyledMenu = styled.div`
+  display: flex;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  height: 90%;
+  padding: 12px 60px;
   .nav-link {
     color: #fff;
     margin: 0 1rem;

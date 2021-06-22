@@ -8,10 +8,10 @@ import Link from 'next/link'
 
 export default function Topbar() {
   return (
-    <TopbarWrapper>
+    <StyledTopbar>
       <div className='wrapper'>
         <Link href='#'>
-          <ImgWrapper className='img-wrapper'>
+          <ImgWrapper>
             <Image
               id='logo'
               src='/img/logo.png'
@@ -21,7 +21,7 @@ export default function Topbar() {
             />
           </ImgWrapper>
         </Link>
-        <div className='content-wrapper'>
+        <div className='info-wrapper'>
           <a href='#'>
             <div className='info'>
               <FaMapMarkerAlt className='icon' />
@@ -42,11 +42,12 @@ export default function Topbar() {
           </a>
         </div>
       </div>
-    </TopbarWrapper>
+    </StyledTopbar>
   )
 }
 
-const TopbarWrapper = styled.div`
+const StyledTopbar = styled.div`
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +60,7 @@ const TopbarWrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
-  .img-wrapper {
+  ${ImgWrapper} {
     margin: auto auto auto 0;
     width: 198px;
     height: 44px;
@@ -67,7 +68,7 @@ const TopbarWrapper = styled.div`
   #logo {
     cursor: pointer;
   }
-  .content-wrapper {
+  .info-wrapper {
     display: flex;
   }
   .info {

@@ -5,7 +5,7 @@ import { Cards } from './Services'
 
 export default function About() {
   return (
-    <AboutWrapper id='about'>
+    <StyledAbout id='about'>
       <h1>About Us</h1>
       <div className='blue-bg'></div>
       <AboutCards>
@@ -42,11 +42,11 @@ export default function About() {
           </div>
         </a>
       </AboutCards>
-    </AboutWrapper>
+    </StyledAbout>
   )
 }
 
-const AboutWrapper = styled(Container)`
+const StyledAbout = styled(Container)`
   position: relative;
   flex-direction: column;
   border-bottom: 1px solid var(--grey-line);

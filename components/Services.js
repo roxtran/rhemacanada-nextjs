@@ -6,7 +6,7 @@ import { IoMdSchool } from 'react-icons/io'
 
 export default function Services() {
   return (
-    <ServicesWrapper id='services'>
+    <StyledServices id='services'>
       <h1>What We Do</h1>
       <Cards>
         <a href='https://rhemaonline.ca' target='_blank'>
@@ -31,11 +31,11 @@ export default function Services() {
           </div>
         </a>
       </Cards>
-    </ServicesWrapper>
+    </StyledServices>
   )
 }
 
-const ServicesWrapper = styled(Container)`
+const StyledServices = styled(Container)`
   position: relative;
   flex-direction: column;
   h1 {

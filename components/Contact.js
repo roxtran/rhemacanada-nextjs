@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export default function Contact() {
   return (
-    <ContactWrapper id='contact'>
+    <StyledContact id='contact'>
       <h1>Contact Us</h1>
       <div className='wrapper'>
         <div className='content'>
@@ -42,11 +42,11 @@ export default function Contact() {
           ></iframe>
         </div>
       </div>
-    </ContactWrapper>
+    </StyledContact>
   )
 }
 
-const ContactWrapper = styled(Container)`
+const StyledContact = styled(Container)`
   flex-direction: column;
   h1 {
     margin-bottom: 2rem;

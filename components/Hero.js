@@ -31,7 +31,7 @@ export default function Hero() {
     return null
   }
   return (
-    <HeroWrapper>
+    <StyledHero>
       <IoIosArrowDropleftCircle
         className='arrow arrow-left'
         onClick={prevSlide}
@@ -48,7 +48,7 @@ export default function Hero() {
           >
             {index === current && (
               <>
-                <ImgWrapper className='img-wrapper'>
+                <ImgWrapper>
                   <Image
                     src={slide.imgUrl}
                     alt='slide-item'
@@ -68,17 +68,17 @@ export default function Hero() {
           </div>
         )
       })}
-    </HeroWrapper>
+    </StyledHero>
   )
 }
 
-const HeroWrapper = styled.section`
+const StyledHero = styled.section`
   position: relative;
   z-index: 0;
   overflow: hidden;
-  .img-wrapper {
+  ${ImgWrapper} {
     width: 100vw;
-    height: 68vh;
+    height: 72vh;
   }
   .img-overlay {
     position: absolute;
@@ -127,7 +127,7 @@ const HeroWrapper = styled.section`
     left: 10%;
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.25rem;
+      /* margin-bottom: 0.15rem; */
     }
     p {
       font-size: 1.2rem;

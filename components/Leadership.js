@@ -10,7 +10,7 @@ import {
 
 export default function Leadership() {
   return (
-    <LeadershipWrapper id='leadership'>
+    <StyledLeadership id='leadership'>
       <div className='wrapper'>
         <h1>Leadership</h1>
         <Tabs>
@@ -25,7 +25,7 @@ export default function Leadership() {
               {emt.map((leader) => (
                 <a key={leader.name}>
                   <div className='leader'>
-                    <ImgWrapper className='img-wrapper'>
+                    <ImgWrapper>
                       <Image
                         src={leader.smallImg}
                         layout='fill'
@@ -54,7 +54,7 @@ export default function Leadership() {
               {eb.map((leader) => (
                 <a key={leader.name}>
                   <div className='leader'>
-                    <ImgWrapper className='img-wrapper'>
+                    <ImgWrapper>
                       <Image
                         src={leader.smallImg}
                         layout='fill'
@@ -74,11 +74,11 @@ export default function Leadership() {
           </div>
         </Tabs>
       </div>
-    </LeadershipWrapper>
+    </StyledLeadership>
   )
 }
 
-const LeadershipWrapper = styled(Container)`
+const StyledLeadership = styled(Container)`
   flex-direction: column;
   h1 {
     text-align: center;
@@ -113,7 +113,7 @@ const LeadershipWrapper = styled(Container)`
       transform: scale(1);
     }
   }
-  .img-wrapper {
+  ${ImgWrapper} {
     width: 200px;
     height: 200px;
     border-radius: 50%;

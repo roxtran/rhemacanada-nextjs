@@ -9,7 +9,7 @@ export default function Tabs({ children }) {
   }
 
   return (
-    <TabsWrapper>
+    <StyledTabs>
       <div className='tabs'>
         {children.map((tab) => (
           <a
@@ -29,11 +29,11 @@ export default function Tabs({ children }) {
             return <div key={content.props.label}>{content}</div>
         })}
       </div>
-    </TabsWrapper>
+    </StyledTabs>
   )
 }
 
-const TabsWrapper = styled.div`
+const StyledTabs = styled.div`
   width: 100%;
   .tabs {
     display: flex;

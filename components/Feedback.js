@@ -5,18 +5,18 @@ import styled from 'styled-components'
 
 export default function Feedback() {
   return (
-    <FeedbackWrapper>
+    <StyledFeedback>
       <h1>Give Feedback</h1>
       <div className='wrapper'>
         <div className='feedback-wrapper'>
           <FeedbackForm />
         </div>
       </div>
-    </FeedbackWrapper>
+    </StyledFeedback>
   )
 }
 
-const FeedbackWrapper = styled(Container)`
+const StyledFeedback = styled(Container)`
   flex-direction: column;
   padding: 0 0 6rem;
   h1 {

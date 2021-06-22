@@ -7,13 +7,13 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     transition: all 0.1s ease-out;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    color: var(--text-color);
   }
   html, body {
     background: #fff;
     width: 100vw;
     overflow-x: hidden;
+    color: var(--text-color);
+    font-weight: 300;
   }
   a {
     cursor: pointer;
