@@ -7,13 +7,23 @@ import {
   IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,
 } from 'react-icons/io'
+import { motion } from 'framer-motion'
+
+const textAnim = {
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },
+}
+
+const slideUp = {
+  hidden: { opacity: 0, y: 60 },
+  show: { opacity: 1, y: 0, transition: { ease: 'easeInOut', duration: 0.5 } },
+}
 
 export default function Hero() {
   const [current, setCurrent] = useState(0)
   const length = slides.length
 
   useEffect(() => {
-    const autoPlay = setTimeout(nextSlide, 5000)
+    const autoPlay = setTimeout(nextSlide, 6000)
 
     return () => {
       clearTimeout(autoPlay)
@@ -42,13 +52,14 @@ export default function Hero() {
       />
       {slides.map((slide, index) => {
         return (
-          <div
-            className={index === current ? 'slide active' : 'slide'}
-            key={index}
-          >
+          <div key={index}>
             {index === current && (
               <>
-                <ImgWrapper>
+                <ImgWrapper
+                  initial={{ scale: 1.15 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1, ease: 'easeOut' }}
+                >
                   <Image
                     src={slide.imgUrl}
                     alt='slide-item'
@@ -59,10 +70,15 @@ export default function Hero() {
                   />
                 </ImgWrapper>
                 <div className='img-overlay'></div>
-                <div className='content-wrapper'>
-                  <h1>{slide.h1}</h1>
-                  <p>{slide.p}</p>
-                </div>
+                <motion.div
+                  className='content-wrapper'
+                  variants={textAnim}
+                  initial='hidden'
+                  animate='show'
+                >
+                  <motion.h1 variants={slideUp}>{slide.h1}</motion.h1>
+                  <motion.p variants={slideUp}>{slide.p}</motion.p>
+                </motion.div>
               </>
             )}
           </div>
@@ -72,7 +88,7 @@ export default function Hero() {
   )
 }
 
-const StyledHero = styled.section`
+const StyledHero = styled(motion.section)`
   position: relative;
   z-index: 0;
   overflow: hidden;
@@ -110,20 +126,10 @@ const StyledHero = styled.section`
   .arrow-right {
     right: 32px;
   }
-  .slide {
-    opacity: 0;
-    transition-duration: 1s;
-    transform: scale(1.15);
-  }
-  .slide.active {
-    opacity: 1;
-    /* transition-duration: 1s; */
-    transform: scale(1);
-  }
   .content-wrapper {
     position: absolute;
     width: 650px;
-    top: 45%;
+    top: 50%;
     left: 10%;
     h1 {
       font-size: 2.5rem;

@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -71,7 +72,7 @@ export const Button = styled.a`
     /* box-shadow: var(--shadow); */
   }
 `
-export const ImgWrapper = styled.div`
+export const ImgWrapper = styled(motion.div)`
   position: relative;
   border-radius: 5px;
   overflow: hidden;
