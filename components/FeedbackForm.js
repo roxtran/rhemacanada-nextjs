@@ -16,6 +16,7 @@ export default class FeedbackForm extends Component {
         onSubmit={this.submitForm}
         action='https://formspree.io/f/xnqoojkn'
         method='POST'
+        className='form-wrapper'
       >
         <input type='text' name='Full Name' placeholder='Full name' required />
         <input type='email' name='Email' placeholder='Email' required />

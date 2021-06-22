@@ -19,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     color: var(--text-color);
     text-decoration: none;
+    &:active, &:focus {
+      outline: 0;
+      border: none;
+    }
   }
   h1, h2, h3, h4 {
     font-weight: 600;

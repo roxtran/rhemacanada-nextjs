@@ -4,60 +4,69 @@ import styled from 'styled-components'
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import Link from 'next/link'
 
+export const SocialIcons = () => {
+  return (
+    <div className='icons'>
+      <a
+        href='https://www.facebook.com/Rhemachristianministries/'
+        target='_blank'
+      >
+        <FaFacebookF className='icon' />
+      </a>
+      <a href='https://twitter.com/rhemacanada?lang=en' target='_blank'>
+        <FaTwitter className='icon' />
+      </a>
+      <a
+        href='https://www.youtube.com/channel/UCNjybtMYeMfwur19Gd5GvRg'
+        target='_blank'
+      >
+        <FaYoutube className='icon' />
+      </a>
+      <a href='https://www.instagram.com/rhemacanada/?hl=en' target='_blank'>
+        <FaInstagram className='icon' />
+      </a>
+    </div>
+  )
+}
+
+export const Menu = () => {
+  return (
+    <div className='menu'>
+      <Link href='#'>
+        <a className='nav-link'>Home</a>
+      </Link>
+      <Link href='#services'>
+        <a className='nav-link'>What We Do</a>
+      </Link>
+      <Link href='#about'>
+        <a className='nav-link'>About Us</a>
+      </Link>
+      <Link href='#leadership'>
+        <a className='nav-link'>Leadership</a>
+      </Link>
+      <Link href='#strategy'>
+        <a className='nav-link'>Corporate Strategy</a>
+      </Link>
+      <Link href='#contact'>
+        <a className='nav-link'>Contact</a>
+      </Link>
+      <a
+        className='nav-link'
+        href='https://rhemaonline.vercel.app/facility-bookings'
+        target='_blank'
+      >
+        Book An Event
+      </a>
+    </div>
+  )
+}
+
 export default function Navbar() {
   return (
     <NavbarWrapper>
       <div className='wrapper'>
-        <div className='icons'>
-          <a
-            href='https://www.facebook.com/Rhemachristianministries/'
-            target='_blank'
-          >
-            <FaFacebookF className='icon' />
-          </a>
-          <a href='https://twitter.com/rhemacanada?lang=en' target='_blank'>
-            <FaTwitter className='icon' />
-          </a>
-          <a
-            href='https://www.youtube.com/channel/UCNjybtMYeMfwur19Gd5GvRg'
-            target='_blank'
-          >
-            <FaYoutube className='icon' />
-          </a>
-          <a
-            href='https://www.instagram.com/rhemacanada/?hl=en'
-            target='_blank'
-          >
-            <FaInstagram className='icon' />
-          </a>
-        </div>
-        <div className='menu'>
-          <Link href='#'>
-            <a className='nav-link'>Home</a>
-          </Link>
-          <Link href='#services'>
-            <a className='nav-link'>What We Do</a>
-          </Link>
-          <Link href='#about'>
-            <a className='nav-link'>About Us</a>
-          </Link>
-          <Link href='#leadership'>
-            <a className='nav-link'>Leadership</a>
-          </Link>
-          <Link href='#strategy'>
-            <a className='nav-link'>Corporate Strategy</a>
-          </Link>
-          <Link href='#contact'>
-            <a className='nav-link'>Contact</a>
-          </Link>
-          <a
-            className='nav-link'
-            href='https://rhemaonline.vercel.app/facility-bookings'
-            target='_blank'
-          >
-            Book An Event
-          </a>
-        </div>
+        <SocialIcons />
+        <Menu />
       </div>
     </NavbarWrapper>
   )

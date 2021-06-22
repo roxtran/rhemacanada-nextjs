@@ -82,7 +82,7 @@ const StrategyWrapper = styled(Container)`
     align-items: center;
   }
   .content {
-    width: 50%;
+    width: 55%;
     padding: 2rem 3rem 0 4rem;
     display: flex;
     flex-direction: column;
@@ -112,6 +112,6 @@ const StrategyWrapper = styled(Container)`
   }
   .img-wrapper {
     height: 600px;
-    width: 50%;
+    width: 45%;
   }
 `
