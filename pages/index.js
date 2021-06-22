@@ -5,6 +5,7 @@ import Services from '../components/Services'
 import About from '../components/About'
 import Leadership from '../components/Leadership'
 import Strategy from '../components/Strategy'
+import Contact from '../components/Contact'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Leadership />
       <Strategy />
+      <Contact />
     </>
   )
 }

@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function Strategy() {
   return (
-    <StrategyWrapper>
+    <StrategyWrapper id='strategy'>
       <div className='wrapper'>
         <div className='content'>
           <h1>Corporate Strategy</h1>
@@ -83,7 +83,7 @@ const StrategyWrapper = styled(Container)`
   }
   .content {
     width: 50%;
-    padding: 2rem 2rem 0;
+    padding: 2rem 3rem 0 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
