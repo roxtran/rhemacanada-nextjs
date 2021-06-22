@@ -32,13 +32,11 @@ export default function Strategy() {
             <div className='item'>
               <div className='number'>02</div>
               <div className='text-wrapper'>
-                <div className='high-light'>
-                  Supporting Spiritual Excellence:
-                </div>
+                <div className='high-light'>Affecting Human Wellness:</div>
                 <div className='text'>
-                  Deliver with excellence a Spirit-filled worship & ministry
-                  experience that is innovative, relevant and that serves
-                  broader communities.
+                  Deliver holistic programs and services that addresses the
+                  spiritual, social and economic well-being of the individual,
+                  family, and community.
                 </div>
               </div>
             </div>
@@ -46,25 +44,21 @@ export default function Strategy() {
               <div className='number'>03</div>
               <div className='text-wrapper'>
                 <div className='high-light'>
-                  Supporting Spiritual Excellence:
+                  Creating Sustainable Communities:
                 </div>
                 <div className='text'>
-                  Deliver with excellence a Spirit-filled worship & ministry
-                  experience that is innovative, relevant and that serves
-                  broader communities.
+                  Feed, clothe, shelter, integrate and empower those within the
+                  broader community who are unable to do so.
                 </div>
               </div>
             </div>
             <div className='item'>
               <div className='number'>04</div>
               <div className='text-wrapper'>
-                <div className='high-light'>
-                  Supporting Spiritual Excellence:
-                </div>
+                <div className='high-light'>Building A Better World:</div>
                 <div className='text'>
-                  Deliver with excellence a Spirit-filled worship & ministry
-                  experience that is innovative, relevant and that serves
-                  broader communities.
+                  Engage in meaningful educational, missional and environmental
+                  initiatives that further human growth and progress.
                 </div>
               </div>
             </div>

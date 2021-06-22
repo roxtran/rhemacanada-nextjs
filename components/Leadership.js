@@ -23,7 +23,7 @@ export default function Leadership() {
             </p>
             <div className='leaders'>
               {emt.map((leader) => (
-                <a>
+                <a key={leader.name}>
                   <div className='leader'>
                     <ImgWrapper className='img-wrapper'>
                       <Image
@@ -52,7 +52,7 @@ export default function Leadership() {
             </p>
             <div className='leaders'>
               {eb.map((leader) => (
-                <a>
+                <a key={leader.name}>
                   <div className='leader'>
                     <ImgWrapper className='img-wrapper'>
                       <Image
