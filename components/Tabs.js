@@ -12,14 +12,13 @@ export default function Tabs({ children }) {
     <TabsWrapper>
       <div className='tabs'>
         {children.map((tab) => (
-          <div
+          <a
+            onClick={() => handleClick(tab.props.label)}
             className={tab.props.label === activeTab ? 'tab current' : 'tab'}
             key={tab.props.label}
           >
-            <a onClick={() => handleClick(tab.props.label)}>
-              {tab.props.label}
-            </a>
-          </div>
+            {tab.props.label}
+          </a>
         ))}
         {/* <div className='tab current'>Executive Management Team</div>
         <div className='tab'>Executive Board</div> */}
