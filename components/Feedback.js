@@ -41,6 +41,7 @@ const FeedbackWrapper = styled(Container)`
       flex-flow: column wrap;
       justify-content: center;
       align-items: center;
+      font-size: 0.75rem;
     }
 
     p {
@@ -54,8 +55,6 @@ const FeedbackWrapper = styled(Container)`
       border: 1px solid var(--grey-line);
       border-radius: 5px;
       margin-bottom: 20px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 0.75rem;
 
       :focus {
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -65,15 +64,16 @@ const FeedbackWrapper = styled(Container)`
     }
 
     button {
+      font-size: 0.9rem;
       margin-top: 20px;
       color: #fff;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 4px;
       border: none;
       border-radius: 50px;
       background-color: var(--blue);
-      padding: 14px 32px;
+      padding: 12px 36px;
       cursor: pointer;
       &:hover {
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);

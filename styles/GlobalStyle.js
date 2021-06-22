@@ -6,14 +6,14 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     transition: all 0.1s ease-out;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: var(--text-color);
   }
   html, body {
     background: #fff;
-    color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
     width: 100vw;
     overflow-x: hidden;
-    font-weight: 300;
   }
   a {
     cursor: pointer;
