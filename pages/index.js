@@ -6,6 +6,8 @@ import About from '../components/About'
 import Leadership from '../components/Leadership'
 import Strategy from '../components/Strategy'
 import Contact from '../components/Contact'
+import Feedback from '../components/Feedback'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
       <Leadership />
       <Strategy />
       <Contact />
+      <Feedback />
+      <Footer />
     </>
   )
 }
