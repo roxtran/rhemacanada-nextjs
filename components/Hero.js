@@ -24,17 +24,17 @@ export default function Hero() {
   const length = slides.length
 
   useEffect(() => {
-    const autoPlay = setTimeout(nextSlide, 10000)
+    const autoPlay = setTimeout(handleNextSlide, 10000)
 
     return () => {
       clearTimeout(autoPlay)
     }
   })
 
-  const prevSlide = () => {
+  const handlePrevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1)
   }
-  const nextSlide = () => {
+  const handleNextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1)
   }
 
@@ -45,11 +45,11 @@ export default function Hero() {
     <StyledHero>
       <IoIosArrowDropleftCircle
         className='arrow arrow-left'
-        onClick={prevSlide}
+        onClick={handlePrevSlide}
       />
       <IoIosArrowDroprightCircle
         className='arrow arrow-right'
-        onClick={nextSlide}
+        onClick={handleNextSlide}
       />
       {slides.map((slide, index) => {
         return (
@@ -134,11 +134,16 @@ const StyledHero = styled(motion.section)`
     right: 32px;
   }
   .content-wrapper {
+    /* background-color: rgba(255 255 255 / 25%); */
+    /* padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); */
     position: absolute;
-    width: 650px;
-    top: 50%;
+    width: 590px;
+    top: 45%;
     left: 10%;
     z-index: 4;
+    text-shadow: 0 0 24px rgb(0 0 0 / 15%);
     h1 {
       font-size: 2.5rem;
       /* margin-bottom: 0.15rem; */
