@@ -17,8 +17,8 @@ export default function Feedback() {
       animate={controls}
       ref={element}
     >
-      <motion.h1 variants={slideUp}>Give Feedback</motion.h1>
       <div className='wrapper'>
+        <motion.h1 variants={slideUp}>Give Feedback</motion.h1>
         <motion.div variants={slideUp} className='feedback-wrapper'>
           <FeedbackForm />
         </motion.div>
@@ -36,7 +36,9 @@ const StyledFeedback = styled(Container)`
   }
   .wrapper {
     width: 1140px;
+    max-width: 90vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

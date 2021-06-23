@@ -100,6 +100,9 @@ const StyledStrategy = styled(Container)`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    h1 {
+      margin-bottom: 1rem;
+    }
     @media screen and (max-width: 1024px) {
       width: 100%;
       padding: 3.5rem 3.5rem 0;

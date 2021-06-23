@@ -182,7 +182,6 @@ const StyledHero = styled(motion.section)`
       top: 35%;
       left: 5%;
       h1 {
-        line-height: 3rem;
         margin-bottom: 1rem;
       }
     }

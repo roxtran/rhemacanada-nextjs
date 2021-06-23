@@ -31,6 +31,10 @@ export const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 3rem;
+    @media screen and (max-width: 640px) {
+      font-size: 2.75rem;
+      line-height: 3rem;
+    }
   }
   h2 {
     font-size: 1.75rem;
