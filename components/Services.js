@@ -3,33 +3,69 @@ import { Container } from '../styles/GlobalStyle'
 import styled from 'styled-components'
 import { FaChurch, FaCubes } from 'react-icons/fa'
 import { IoMdSchool } from 'react-icons/io'
+import { useScroll } from '../utils/useScroll'
+import { motion } from 'framer-motion'
+import { slideUp } from './Hero'
+
+export const staggering = {
+  show: { transition: { staggerChildren: 0.2, delayChildren: 0.25 } },
+}
 
 export default function Services() {
+  const [element, controls] = useScroll()
+
   return (
-    <StyledServices id='services'>
-      <h1>What We Do</h1>
-      <Cards>
-        <a href='https://rhemaonline.ca' target='_blank'>
+    <StyledServices
+      id='services'
+      variants={staggering}
+      initial='hidden'
+      exit='exit'
+      animate={controls}
+      ref={element}
+    >
+      <div className='hide-overflow'>
+        <motion.h1 variants={slideUp}>What We Do</motion.h1>
+      </div>
+      <Cards
+        variants={slideUp}
+        initial='hidden'
+        exit='exit'
+        animate={controls}
+        ref={element}
+      >
+        <motion.a
+          href='https://rhemaonline.ca'
+          target='_blank'
+          variants={slideUp}
+        >
           <div className='card'>
             <div className='color-overlay'></div>
             <FaChurch className='icon' />
             <h3>Church</h3>
           </div>
-        </a>
-        <a href='http://kingscollegepsc.ca/' target='_blank'>
+        </motion.a>
+        <motion.a
+          href='http://kingscollegepsc.ca/'
+          target='_blank'
+          variants={slideUp}
+        >
           <div className='card'>
             <div className='color-overlay'></div>
             <IoMdSchool className='icon' />
             <h3>Education</h3>
           </div>
-        </a>
-        <a href='http://rfcanada.org/' target='_blank'>
+        </motion.a>
+        <motion.a
+          href='http://rfcanada.org/'
+          target='_blank'
+          variants={slideUp}
+        >
           <div className='card'>
             <div className='color-overlay'></div>
             <FaCubes className='icon' />
             <h3>Foundation</h3>
           </div>
-        </a>
+        </motion.a>
       </Cards>
     </StyledServices>
   )
@@ -43,7 +79,7 @@ const StyledServices = styled(Container)`
     margin-bottom: 2.5rem;
   }
 `
-export const Cards = styled.div`
+export const Cards = styled(motion.div)`
   display: flex;
   a:hover {
     color: #fff;

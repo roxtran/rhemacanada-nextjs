@@ -9,14 +9,14 @@ import {
 } from 'react-icons/io'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const textAnim = {
+export const staggering = {
   show: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
 }
 
-const slideUp = {
+export const slideUp = {
   hidden: { opacity: 0, y: 60 },
   show: { opacity: 1, y: 0, transition: { ease: 'easeInOut', duration: 0.5 } },
-  exit: { opacity: 0 },
+  exit: { opacity: 0, y: 60 },
 }
 
 export default function Hero() {
@@ -74,7 +74,7 @@ export default function Hero() {
                 <div className='img-overlay'></div>
                 <motion.div
                   className='content-wrapper'
-                  variants={textAnim}
+                  variants={staggering}
                   initial='hidden'
                   animate='show'
                   exit='exit'

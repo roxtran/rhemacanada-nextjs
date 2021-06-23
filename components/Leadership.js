@@ -7,24 +7,42 @@ import {
   executiveManagementTeam as emt,
   executiveBoard as eb,
 } from '../data/leaders'
+import { useScroll } from '../utils/useScroll'
+import { motion } from 'framer-motion'
+import { slideUp } from './Hero'
+import { staggering } from './Services'
 
 export default function Leadership() {
+  const [element, controls] = useScroll()
+
   return (
-    <StyledLeadership id='leadership'>
+    <StyledLeadership
+      id='leadership'
+      variants={staggering}
+      initial='hidden'
+      animate={controls}
+      ref={element}
+    >
       <div className='wrapper'>
-        <h1>Leadership</h1>
+        <motion.h1 variants={slideUp}>Leadership</motion.h1>
         <Tabs>
-          <div label='Executive Management Team'>
-            <p className='desc'>
+          <motion.div label='Executive Management Team'>
+            <motion.p className='desc' variants={slideUp}>
               Tasked with the operational success of the Rhema organization, our
               Executive Team ensures the successful execution of our global
               mission. We invite you to take a moment to meet the men and women
               who are leading our future while inspiring us each day.
-            </p>
-            <div className='leaders'>
+            </motion.p>
+            <div
+              className='leaders'
+              variants={staggering}
+              initial='hidden'
+              animate={controls}
+              ref={element}
+            >
               {emt.map((leader) => (
                 <a key={leader.name}>
-                  <div className='leader'>
+                  <motion.div className='leader' variants={slideUp}>
                     <ImgWrapper>
                       <Image
                         src={leader.smallImg}
@@ -38,22 +56,28 @@ export default function Leadership() {
                       <p className='name'>{leader.name}</p>
                       <p className='title'>{leader.title}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
           <div label='Executive Board'>
-            <p className='desc'>
+            <motion.p className='desc' variants={slideUp}>
               Tasked with overall governance, our Executive Board ensures that
               through fiduciary duty, oversight and strategic policies, the
               vision of our organization is realized. Meet the members of our
               board who are championing our future success.
-            </p>
-            <div className='leaders'>
+            </motion.p>
+            <div
+              className='leaders'
+              variants={staggering}
+              initial='hidden'
+              animate={controls}
+              ref={element}
+            >
               {eb.map((leader) => (
                 <a key={leader.name}>
-                  <div className='leader'>
+                  <motion.div className='leader' variants={slideUp}>
                     <ImgWrapper>
                       <Image
                         src={leader.smallImg}
@@ -67,7 +91,7 @@ export default function Leadership() {
                       <p className='name'>{leader.name}</p>
                       <p className='title'>{leader.title}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 </a>
               ))}
             </div>

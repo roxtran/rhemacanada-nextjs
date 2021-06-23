@@ -2,21 +2,33 @@ import React from 'react'
 import { Container, ImgWrapper } from '../styles/GlobalStyle'
 import styled from 'styled-components'
 import Image from 'next/image'
+import { useScroll } from '../utils/useScroll'
+import { motion } from 'framer-motion'
+import { slideUp } from './Hero'
+import { staggering } from './Services'
 
 export default function Strategy() {
+  const [element, controls] = useScroll()
+
   return (
-    <StyledStrategy id='strategy'>
+    <StyledStrategy
+      id='strategy'
+      variants={staggering}
+      initial='hidden'
+      animate={controls}
+      ref={element}
+    >
       <div className='wrapper'>
         <div className='content'>
-          <h1>Corporate Strategy</h1>
-          <p className='desc'>
+          <motion.h1 variants={slideUp}>Corporate Strategy</motion.h1>
+          <motion.p className='desc' variants={slideUp}>
             Through a data driven approach and intimate knowledge of our local &
             global clients we develop products & services that meet people at
             the point of their need, transform lives, while sustaining positive
             growth.
-          </p>
+          </motion.p>
           <div className='items'>
-            <div className='item'>
+            <motion.div variants={slideUp} className='item'>
               <div className='number'>01</div>
               <div className='text-wrapper'>
                 <div className='high-light'>
@@ -28,8 +40,8 @@ export default function Strategy() {
                   broader communities.
                 </div>
               </div>
-            </div>
-            <div className='item'>
+            </motion.div>
+            <motion.div variants={slideUp} className='item'>
               <div className='number'>02</div>
               <div className='text-wrapper'>
                 <div className='high-light'>Affecting Human Wellness:</div>
@@ -39,8 +51,8 @@ export default function Strategy() {
                   family, and community.
                 </div>
               </div>
-            </div>
-            <div className='item'>
+            </motion.div>
+            <motion.div variants={slideUp} className='item'>
               <div className='number'>03</div>
               <div className='text-wrapper'>
                 <div className='high-light'>
@@ -51,8 +63,8 @@ export default function Strategy() {
                   broader community who are unable to do so.
                 </div>
               </div>
-            </div>
-            <div className='item'>
+            </motion.div>
+            <motion.div variants={slideUp} className='item'>
               <div className='number'>04</div>
               <div className='text-wrapper'>
                 <div className='high-light'>Building A Better World:</div>
@@ -61,10 +73,10 @@ export default function Strategy() {
                   initiatives that further human growth and progress.
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-        <ImgWrapper>
+        <ImgWrapper variants={slideUp}>
           <Image src='/img/strategy.jpg' layout='fill' objectFit='cover' />
         </ImgWrapper>
       </div>

@@ -50,8 +50,11 @@ export const GlobalStyle = createGlobalStyle`
   ol, ul {
     padding-left: 0;
   }
+  .hide-overflow {
+    overflow: hidden;
+  }
 `
-export const Container = styled.section`
+export const Container = styled(motion.section)`
   display: flex;
   justify-content: center;
   align-items: center;

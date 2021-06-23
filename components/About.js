@@ -2,22 +2,33 @@ import React from 'react'
 import { Container } from '../styles/GlobalStyle'
 import styled from 'styled-components'
 import { Cards } from './Services'
+import { useScroll } from '../utils/useScroll'
+import { motion } from 'framer-motion'
+import { slideUp } from './Hero'
+import { staggering } from './Services'
 
 export default function About() {
+  const [element, controls] = useScroll()
   return (
-    <StyledAbout id='about'>
-      <h1>About Us</h1>
+    <StyledAbout
+      id='about'
+      variants={staggering}
+      initial='hidden'
+      animate={controls}
+      ref={element}
+    >
+      <motion.h1 variants={slideUp}>About Us</motion.h1>
       <div className='blue-bg'></div>
       <AboutCards>
-        <a>
+        <motion.a variants={slideUp}>
           <div className='card'>
             <div className='color-overlay'></div>
             <h2>Our Vision</h2>
             <div className='line'></div>
             <p>We empower people to live better lives.</p>
           </div>
-        </a>
-        <a>
+        </motion.a>
+        <motion.a variants={slideUp}>
           <div className='card'>
             <div className='color-overlay'></div>
             <h2>Our Mission</h2>
@@ -27,8 +38,8 @@ export default function About() {
               meet people at their point of need.
             </p>
           </div>
-        </a>
-        <a>
+        </motion.a>
+        <motion.a variants={slideUp}>
           <div className='card'>
             <div className='color-overlay'></div>
             <h2>Core Values</h2>
@@ -40,7 +51,7 @@ export default function About() {
               </strong>
             </p>
           </div>
-        </a>
+        </motion.a>
       </AboutCards>
     </StyledAbout>
   )

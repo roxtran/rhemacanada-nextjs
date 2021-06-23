@@ -2,15 +2,26 @@ import React from 'react'
 import FeedbackForm from './FeedbackForm'
 import { Container } from '../styles/GlobalStyle'
 import styled from 'styled-components'
+import { useScroll } from '../utils/useScroll'
+import { motion } from 'framer-motion'
+import { slideUp } from './Hero'
+import { staggering } from './Services'
 
 export default function Feedback() {
+  const [element, controls] = useScroll()
+
   return (
-    <StyledFeedback>
-      <h1>Give Feedback</h1>
+    <StyledFeedback
+      variants={staggering}
+      initial='hidden'
+      animate={controls}
+      ref={element}
+    >
+      <motion.h1 variants={slideUp}>Give Feedback</motion.h1>
       <div className='wrapper'>
-        <div className='feedback-wrapper'>
+        <motion.div variants={slideUp} className='feedback-wrapper'>
           <FeedbackForm />
-        </div>
+        </motion.div>
       </div>
     </StyledFeedback>
   )
