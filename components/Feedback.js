@@ -90,7 +90,7 @@ const StyledFeedback = styled(Container)`
       padding: 12px 36px;
       cursor: pointer;
       &:hover {
-        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 24px -8px rgb(20 144 215 / 50%);
       }
     }
   }
