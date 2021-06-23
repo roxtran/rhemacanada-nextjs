@@ -110,7 +110,7 @@ const StyledLeadership = styled(Container)`
   }
   .wrapper {
     width: 1140px;
-    max-width: 90vw;
+    max-width: 95vw;
   }
   .desc {
     margin-bottom: 2rem;

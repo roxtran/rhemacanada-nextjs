@@ -159,6 +159,7 @@ const StyledHero = styled(motion.section)`
     /* padding: 2rem;
     border-radius: 10px;
     backdrop-filter: blur(5px); */
+    height: 100%;
     position: absolute;
     width: 590px;
     max-width: 90vw;
@@ -184,6 +185,12 @@ const StyledHero = styled(motion.section)`
       h1 {
         margin-bottom: 1rem;
       }
+      p {
+        font-size: 1rem;
+      }
+    }
+    @media screen and (max-width: 320px) {
+      top: 20%;
     }
   }
 `

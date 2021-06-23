@@ -10,6 +10,8 @@ export default function Footer() {
 }
 
 const StyledFooter = styled.footer`
+  padding: 1rem;
+  font-size: 0.9rem;
   border-top: 1px solid var(--grey-line);
   display: flex;
   justify-content: center;

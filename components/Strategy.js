@@ -105,7 +105,7 @@ const StyledStrategy = styled(Container)`
     }
     @media screen and (max-width: 1024px) {
       width: 100%;
-      padding: 3.5rem 3.5rem 0;
+      padding: 3rem 3rem 0;
     }
   }
   .items {
