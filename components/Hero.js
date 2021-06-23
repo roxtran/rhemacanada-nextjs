@@ -8,9 +8,16 @@ import {
   IoIosArrowDropleftCircle,
 } from 'react-icons/io'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useScroll } from '../utils/useScroll'
 
 export const staggering = {
   show: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
+}
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.5 } },
+  exit: { opacity: 0 },
 }
 
 export const slideUp = {
@@ -20,6 +27,8 @@ export const slideUp = {
 }
 
 export default function Hero() {
+  const [element, controls] = useScroll()
+
   const [current, setCurrent] = useState(0)
   const length = slides.length
 
@@ -42,7 +51,13 @@ export default function Hero() {
     return null
   }
   return (
-    <StyledHero>
+    <StyledHero
+      variants={fadeIn}
+      initial='hidden'
+      exit='exit'
+      animate={controls}
+      ref={element}
+    >
       <IoIosArrowDropleftCircle
         className='arrow arrow-left'
         onClick={handlePrevSlide}

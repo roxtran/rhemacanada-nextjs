@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 import { slideUp } from './Hero'
 
 export const staggering = {
-  show: { transition: { staggerChildren: 0.2, delayChildren: 0.5 } },
+  show: { transition: { staggerChildren: 0.2, delayChildren: 0.4 } },
 }
 
 export default function Services() {
