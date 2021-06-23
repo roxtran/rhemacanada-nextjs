@@ -10,7 +10,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion'
 
 const textAnim = {
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
 }
 
 const slideUp = {
@@ -57,10 +57,10 @@ export default function Hero() {
             {index === current && (
               <>
                 <ImgWrapper
-                  initial={{ scale: 1.15, zIndex: 2, opacity: 0.8 }}
+                  initial={{ scale: 1.15, zIndex: 2, opacity: 0.5 }}
                   animate={{ scale: 1, zIndex: 1, opacity: 1 }}
-                  exit={{ scale: 0.8, zIndex: 0, opacity: 0.8 }}
-                  transition={{ duration: 1, ease: 'easeOut' }}
+                  exit={{ scale: 0.8, zIndex: 0, opacity: 0.5 }}
+                  transition={{ duration: 0.5, ease: 'easeOut' }}
                 >
                   <Image
                     src={slide.imgUrl}
@@ -113,13 +113,14 @@ const StyledHero = styled(motion.section)`
     );
     width: 100%;
     height: 100%;
+    z-index: 3;
   }
   .arrow {
     position: absolute;
     top: 50%;
     font-size: 3rem;
     color: rgba(0, 0, 0, 0.15);
-    z-index: 3;
+    z-index: 4;
     cursor: pointer;
     user-select: none;
     &:hover {
@@ -137,7 +138,7 @@ const StyledHero = styled(motion.section)`
     width: 650px;
     top: 50%;
     left: 10%;
-    z-index: 3;
+    z-index: 4;
     h1 {
       font-size: 2.5rem;
       /* margin-bottom: 0.15rem; */
