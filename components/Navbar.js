@@ -87,6 +87,9 @@ const StyledNavbar = styled.nav`
     display: flex;
     justify-content: space-between;
   }
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `
 export const StyledIcons = styled.div`
   padding: 12px 0;

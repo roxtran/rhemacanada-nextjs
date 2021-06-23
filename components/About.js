@@ -92,13 +92,13 @@ const AboutCards = styled(Cards)`
   }
   .line {
     width: 25%;
-    height: 1px;
+    height: 2px;
     background-color: var(--text-color);
     margin: 1.5rem 0;
     z-index: 1;
   }
   .card {
-    height: 100%;
+    min-height: 350px;
     padding: 3rem;
     border: 3px solid #fff;
   }

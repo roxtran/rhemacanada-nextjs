@@ -92,6 +92,7 @@ const StyledStrategy = styled(Container)`
     width: 100%;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
   .content {
     width: 55%;
@@ -99,6 +100,10 @@ const StyledStrategy = styled(Container)`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      padding: 3.5rem 3.5rem 0;
+    }
   }
   .items {
     display: flex;
@@ -108,8 +113,10 @@ const StyledStrategy = styled(Container)`
   .item {
     flex: 40%;
     display: flex;
-    margin-right: 2rem;
     margin-bottom: 2rem;
+    &:not(:nth-child(2)):not(:nth-child(4)) {
+      margin-right: 2rem;
+    }
   }
   .number {
     color: var(--blue);
@@ -125,5 +132,8 @@ const StyledStrategy = styled(Container)`
   ${ImgWrapper} {
     height: 600px;
     width: 45%;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
   }
 `

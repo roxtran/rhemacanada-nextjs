@@ -55,6 +55,9 @@ const StyledTopbar = styled.div`
   background: #fff;
   padding: 1rem 0;
   z-index: 1;
+  @media screen and (max-width: 1024px) {
+    padding: 1rem 1rem;
+  }
   .wrapper {
     width: 1140px;
     display: flex;
@@ -70,6 +73,9 @@ const StyledTopbar = styled.div`
   }
   .info-wrapper {
     display: flex;
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
   }
   .info {
     display: flex;

@@ -81,6 +81,9 @@ const StyledServices = styled(Container)`
 `
 export const Cards = styled(motion.div)`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   a:hover {
     color: #fff;
     h3 {

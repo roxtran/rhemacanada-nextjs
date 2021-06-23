@@ -65,7 +65,9 @@ const StyledContact = styled(Container)`
   }
   .wrapper {
     width: 1140px;
+    max-width: 90vw;
     display: flex;
+    flex-wrap: wrap;
     border: 1px solid var(--grey-line);
   }
   .content {
@@ -94,5 +96,8 @@ const StyledContact = styled(Container)`
     height: 100%;
     border-radius: 5px;
     overflow: hidden;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
   }
 `
