@@ -24,7 +24,7 @@ export default function Hero() {
   const length = slides.length
 
   useEffect(() => {
-    const autoPlay = setTimeout(nextSlide, 6000)
+    const autoPlay = setTimeout(nextSlide, 10000)
 
     return () => {
       clearTimeout(autoPlay)
@@ -92,7 +92,6 @@ export default function Hero() {
 }
 
 const StyledHero = styled(motion.section)`
-  background-color: #000;
   position: relative;
   z-index: 0;
   overflow: hidden;
