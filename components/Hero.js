@@ -7,7 +7,7 @@ import {
   IoIosArrowDroprightCircle,
   IoIosArrowDropleftCircle,
 } from 'react-icons/io'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const textAnim = {
   show: { transition: { staggerChildren: 0.1, delayChildren: 0.5 } },
@@ -16,6 +16,7 @@ const textAnim = {
 const slideUp = {
   hidden: { opacity: 0, y: 60 },
   show: { opacity: 1, y: 0, transition: { ease: 'easeInOut', duration: 0.5 } },
+  exit: { opacity: 0 },
 }
 
 export default function Hero() {
@@ -52,12 +53,13 @@ export default function Hero() {
       />
       {slides.map((slide, index) => {
         return (
-          <div key={index}>
+          <AnimatePresence key={index}>
             {index === current && (
               <>
                 <ImgWrapper
-                  initial={{ scale: 1.15 }}
-                  animate={{ scale: 1 }}
+                  initial={{ scale: 1.15, zIndex: 2, opacity: 0.8 }}
+                  animate={{ scale: 1, zIndex: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, zIndex: 0, opacity: 0.8 }}
                   transition={{ duration: 1, ease: 'easeOut' }}
                 >
                   <Image
@@ -75,13 +77,14 @@ export default function Hero() {
                   variants={textAnim}
                   initial='hidden'
                   animate='show'
+                  exit='exit'
                 >
                   <motion.h1 variants={slideUp}>{slide.h1}</motion.h1>
                   <motion.p variants={slideUp}>{slide.p}</motion.p>
                 </motion.div>
               </>
             )}
-          </div>
+          </AnimatePresence>
         )
       })}
     </StyledHero>
@@ -89,10 +92,14 @@ export default function Hero() {
 }
 
 const StyledHero = styled(motion.section)`
+  background-color: #000;
   position: relative;
   z-index: 0;
   overflow: hidden;
+  width: 100vw;
+  height: 72vh;
   ${ImgWrapper} {
+    position: absolute;
     width: 100vw;
     height: 72vh;
   }
@@ -113,7 +120,7 @@ const StyledHero = styled(motion.section)`
     top: 50%;
     font-size: 3rem;
     color: rgba(0, 0, 0, 0.15);
-    z-index: 1;
+    z-index: 3;
     cursor: pointer;
     user-select: none;
     &:hover {
@@ -131,6 +138,7 @@ const StyledHero = styled(motion.section)`
     width: 650px;
     top: 50%;
     left: 10%;
+    z-index: 3;
     h1 {
       font-size: 2.5rem;
       /* margin-bottom: 0.15rem; */
