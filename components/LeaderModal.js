@@ -5,13 +5,17 @@ import { VscTriangleDown } from 'react-icons/vsc'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const slideDown = {
-  hidden: { y: -100, opacity: 0 },
+  hidden: { y: -200, opacity: 0 },
   show: {
     y: [0, -50, 0],
     opacity: 1,
     transition: { duration: 0.25, ease: 'easeIn' },
   },
-  exit: { opacity: 0, y: 100, transition: { duration: 0.25, ease: 'easeIn' } },
+  exit: {
+    opacity: 1,
+    y: 400,
+    // transition: { duration: 0.25, ease: 'easeIn' },
+  },
 }
 
 export default function LeaderModal({ openModal, setOpenModal, leader }) {
@@ -21,7 +25,7 @@ export default function LeaderModal({ openModal, setOpenModal, leader }) {
         <StyledModal
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.25 }}
           exit={{ opacity: 0 }}
         >
           <motion.div
