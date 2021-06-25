@@ -46,6 +46,7 @@ export default function LeaderModal({ openModal, setOpenModal, leader }) {
                     src={leader.largeImg}
                     layout='fill'
                     objectFit='cover'
+                    objectPosition='top'
                     placeholder='blur'
                   />
                 </figure>
@@ -81,7 +82,7 @@ const StyledModal = styled(motion.div)`
     position: relative;
     width: 1100px;
     max-width: 90vw;
-    height: 80vh;
+    height: 85vh;
     border-radius: 5px;
   }
   .btn-close {
@@ -103,6 +104,10 @@ const StyledModal = styled(motion.div)`
       top: 2px;
       margin-left: 0.35rem;
     }
+    @media screen and (max-width: 640px) {
+      font-size: 0.85rem;
+      padding: 0.9rem 2rem;
+    }
   }
   .modal-content {
     display: flex;
@@ -112,12 +117,20 @@ const StyledModal = styled(motion.div)`
     justify-content: flex-start;
     align-items: flex-start;
     padding: 6% 0 2% 5%;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      padding: 5% 0 5% 5%;
+      padding-top: 3rem;
+      overflow: hidden;
+      overflow-y: auto;
+    }
   }
   .modal-left {
     display: flex;
     flex-direction: column;
     flex: 40%;
     margin-right: 3rem;
+    padding-bottom: 1rem;
     .line {
       background: var(--grey-line);
       height: 1px;
@@ -128,7 +141,20 @@ const StyledModal = styled(motion.div)`
       color: var(--blue);
     }
     h3 {
-      font-style: italic;
+    }
+    @media screen and (max-width: 640px) {
+      margin-right: 0;
+      width: 100%;
+      padding-right: 5%;
+      h2 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1.15rem;
+      }
+      .line {
+        margin: 0.25rem 0;
+      }
     }
   }
   .img-wrapper {
@@ -139,6 +165,11 @@ const StyledModal = styled(motion.div)`
     height: 500px;
     margin-bottom: 1.5rem;
     box-shadow: -4px 5px 15px -10px rgb(0 0 0 / 0.5);
+    @media screen and (max-width: 640px) {
+      height: 200px;
+      width: 200px;
+      margin-bottom: 1rem;
+    }
   }
   .modal-right {
     flex: 50%;

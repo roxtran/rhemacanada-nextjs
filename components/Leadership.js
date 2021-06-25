@@ -20,106 +20,109 @@ export default function Leadership() {
   const [selectedLeader, setSelectedLeader] = useState(null)
 
   return (
-    <StyledLeadership
-      id='leadership'
-      variants={staggering}
-      initial='hidden'
-      animate={controls}
-      ref={element}
-    >
+    <>
       <LeaderModal
         leader={selectedLeader}
         openModal={openModal}
         setOpenModal={setOpenModal}
       />
-      <div className='wrapper'>
-        <motion.h1 variants={slideUp}>Leadership</motion.h1>
-        <Tabs>
-          <motion.div label='Executive Management Team'>
-            <motion.p className='desc' variants={slideUp}>
-              Tasked with the operational success of the Rhema organization, our
-              Executive Team ensures the successful execution of our global
-              mission. We invite you to take a moment to meet the men and women
-              who are leading our future while inspiring us each day.
-            </motion.p>
-            <div
-              className='leaders'
-              variants={staggering}
-              initial='hidden'
-              animate={controls}
-              ref={element}
-            >
-              {emt.map((leader) => (
-                <motion.a
-                  key={leader.name}
-                  className='leader'
-                  variants={slideUp}
-                  onClick={() => {
-                    setOpenModal(true)
-                    setSelectedLeader(leader)
-                  }}
-                >
-                  <ImgWrapper>
-                    <Image
-                      src={leader.smallImg}
-                      layout='fill'
-                      objectFit='cover'
-                    />
-                  </ImgWrapper>
-                  <p className='name'>{leader.name}</p>
-                  <p className='title'>{leader.title}</p>
-                  <div className='leader-overlay'>
+      <StyledLeadership
+        id='leadership'
+        variants={staggering}
+        initial='hidden'
+        animate={controls}
+        ref={element}
+      >
+        <div className='wrapper'>
+          <motion.h1 variants={slideUp}>Leadership</motion.h1>
+          <Tabs>
+            <motion.div label='Executive Management Team'>
+              <motion.p className='desc' variants={slideUp}>
+                Tasked with the operational success of the Rhema organization,
+                our Executive Team ensures the successful execution of our
+                global mission. We invite you to take a moment to meet the men
+                and women who are leading our future while inspiring us each
+                day.
+              </motion.p>
+              <div
+                className='leaders'
+                variants={staggering}
+                initial='hidden'
+                animate={controls}
+                ref={element}
+              >
+                {emt.map((leader) => (
+                  <motion.a
+                    key={leader.name}
+                    className='leader'
+                    variants={slideUp}
+                    onClick={() => {
+                      setOpenModal(true)
+                      setSelectedLeader(leader)
+                    }}
+                  >
+                    <ImgWrapper>
+                      <Image
+                        src={leader.smallImg}
+                        layout='fill'
+                        objectFit='cover'
+                      />
+                    </ImgWrapper>
                     <p className='name'>{leader.name}</p>
                     <p className='title'>{leader.title}</p>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-          <div label='Executive Board'>
-            <motion.p className='desc' variants={slideUp}>
-              Tasked with overall governance, our Executive Board ensures that
-              through fiduciary duty, oversight and strategic policies, the
-              vision of our organization is realized. Meet the members of our
-              board who are championing our future success.
-            </motion.p>
-            <div
-              className='leaders'
-              variants={staggering}
-              initial='hidden'
-              animate={controls}
-              ref={element}
-            >
-              {eb.map((leader) => (
-                <motion.a
-                  key={leader.name}
-                  className='leader'
-                  variants={slideUp}
-                  onClick={() => {
-                    setOpenModal(true)
-                    setSelectedLeader(leader)
-                  }}
-                >
-                  <ImgWrapper>
-                    <Image
-                      src={leader.smallImg}
-                      layout='fill'
-                      objectFit='cover'
-                    />
-                  </ImgWrapper>
-                  <p className='name'>{leader.name}</p>
-                  <p className='title'>{leader.title}</p>
-                  <div className='leader-overlay'>
+                    <div className='leader-overlay'>
+                      <p className='name'>{leader.name}</p>
+                      <p className='title'>{leader.title}</p>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+            <div label='Executive Board'>
+              <motion.p className='desc' variants={slideUp}>
+                Tasked with overall governance, our Executive Board ensures that
+                through fiduciary duty, oversight and strategic policies, the
+                vision of our organization is realized. Meet the members of our
+                board who are championing our future success.
+              </motion.p>
+              <div
+                className='leaders'
+                variants={staggering}
+                initial='hidden'
+                animate={controls}
+                ref={element}
+              >
+                {eb.map((leader) => (
+                  <motion.a
+                    key={leader.name}
+                    className='leader'
+                    variants={slideUp}
+                    onClick={() => {
+                      setOpenModal(true)
+                      setSelectedLeader(leader)
+                    }}
+                  >
+                    <ImgWrapper>
+                      <Image
+                        src={leader.smallImg}
+                        layout='fill'
+                        objectFit='cover'
+                      />
+                    </ImgWrapper>
                     <p className='name'>{leader.name}</p>
                     <p className='title'>{leader.title}</p>
-                  </div>
-                </motion.a>
-              ))}
+                    <div className='leader-overlay'>
+                      <p className='name'>{leader.name}</p>
+                      <p className='title'>{leader.title}</p>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
             </div>
-          </div>
-        </Tabs>
-      </div>
-    </StyledLeadership>
+          </Tabs>
+        </div>
+      </StyledLeadership>
+    </>
   )
 }
 
@@ -135,6 +138,9 @@ const StyledLeadership = styled(Container)`
   }
   .desc {
     margin-bottom: 2rem;
+    @media screen and (max-width: 640px) {
+      margin-top: 1rem;
+    }
   }
   .leaders {
     display: flex;

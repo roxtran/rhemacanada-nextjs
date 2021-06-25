@@ -23,7 +23,7 @@ export default function Tabs({ children }) {
         {/* <div className='tab current'>Executive Management Team</div>
         <div className='tab'>Executive Board</div> */}
       </div>
-      <div className='content'>
+      <div className='tab-content'>
         {children.map((content) => {
           if (content.props.label === activeTab)
             return <div key={content.props.label}>{content}</div>
@@ -52,10 +52,13 @@ const StyledTabs = styled.div`
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
-  .content {
-    padding: 3rem;
+  .tab-content {
+    padding: 5%;
     text-align: center;
     border: 2px solid var(--grey-line);
     border-top: 0;
+    @media screen and (max-width: 640px) {
+      /* padding: 2rem; */
+    }
   }
 `
