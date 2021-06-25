@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, ImgWrapper } from '../styles/GlobalStyle'
 import Image from 'next/image'
 import styled from 'styled-components'
@@ -11,9 +11,13 @@ import { useScroll } from '../utils/useScroll'
 import { motion } from 'framer-motion'
 import { slideUp } from './Hero'
 import { staggering } from './Services'
+import LeaderModal from './LeaderModal'
 
 export default function Leadership() {
   const [element, controls] = useScroll()
+
+  const [openModal, setOpenModal] = useState(false)
+  const [selectedLeader, setSelectedLeader] = useState(null)
 
   return (
     <StyledLeadership
@@ -23,6 +27,11 @@ export default function Leadership() {
       animate={controls}
       ref={element}
     >
+      <LeaderModal
+        leader={selectedLeader}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+      />
       <div className='wrapper'>
         <motion.h1 variants={slideUp}>Leadership</motion.h1>
         <Tabs>
@@ -41,23 +50,29 @@ export default function Leadership() {
               ref={element}
             >
               {emt.map((leader) => (
-                <a key={leader.name}>
-                  <motion.div className='leader' variants={slideUp}>
-                    <ImgWrapper>
-                      <Image
-                        src={leader.smallImg}
-                        layout='fill'
-                        objectFit='cover'
-                      />
-                    </ImgWrapper>
+                <motion.a
+                  key={leader.name}
+                  className='leader'
+                  variants={slideUp}
+                  onClick={() => {
+                    setOpenModal(true)
+                    setSelectedLeader(leader)
+                  }}
+                >
+                  <ImgWrapper>
+                    <Image
+                      src={leader.smallImg}
+                      layout='fill'
+                      objectFit='cover'
+                    />
+                  </ImgWrapper>
+                  <p className='name'>{leader.name}</p>
+                  <p className='title'>{leader.title}</p>
+                  <div className='leader-overlay'>
                     <p className='name'>{leader.name}</p>
                     <p className='title'>{leader.title}</p>
-                    <div className='leader-overlay'>
-                      <p className='name'>{leader.name}</p>
-                      <p className='title'>{leader.title}</p>
-                    </div>
-                  </motion.div>
-                </a>
+                  </div>
+                </motion.a>
               ))}
             </div>
           </motion.div>
@@ -76,23 +91,29 @@ export default function Leadership() {
               ref={element}
             >
               {eb.map((leader) => (
-                <a key={leader.name}>
-                  <motion.div className='leader' variants={slideUp}>
-                    <ImgWrapper>
-                      <Image
-                        src={leader.smallImg}
-                        layout='fill'
-                        objectFit='cover'
-                      />
-                    </ImgWrapper>
+                <motion.a
+                  key={leader.name}
+                  className='leader'
+                  variants={slideUp}
+                  onClick={() => {
+                    setOpenModal(true)
+                    setSelectedLeader(leader)
+                  }}
+                >
+                  <ImgWrapper>
+                    <Image
+                      src={leader.smallImg}
+                      layout='fill'
+                      objectFit='cover'
+                    />
+                  </ImgWrapper>
+                  <p className='name'>{leader.name}</p>
+                  <p className='title'>{leader.title}</p>
+                  <div className='leader-overlay'>
                     <p className='name'>{leader.name}</p>
                     <p className='title'>{leader.title}</p>
-                    <div className='leader-overlay'>
-                      <p className='name'>{leader.name}</p>
-                      <p className='title'>{leader.title}</p>
-                    </div>
-                  </motion.div>
-                </a>
+                  </div>
+                </motion.a>
               ))}
             </div>
           </div>
