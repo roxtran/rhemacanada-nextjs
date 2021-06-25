@@ -22,7 +22,7 @@ export default function Topbar() {
           </ImgWrapper>
         </Link>
         <div className='info-wrapper'>
-          <a href='#'>
+          <a href='#contact'>
             <div className='info'>
               <FaMapMarkerAlt className='icon' />
               <p>49-40 Carl Hall Road Toronto, ON, M3K 2C1</p>

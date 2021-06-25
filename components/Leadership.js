@@ -138,6 +138,7 @@ const StyledLeadership = styled(Container)`
   }
   .desc {
     margin-bottom: 2rem;
+    padding: 1%;
     @media screen and (max-width: 640px) {
       margin-top: 1rem;
     }

@@ -21,7 +21,7 @@ const slideDown = {
 export default function LeaderModal({ openModal, setOpenModal, leader }) {
   return (
     <AnimatePresence exitBeforeEnter>
-      {openModal && (
+      {openModal && leader && (
         <StyledModal
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -54,10 +54,12 @@ export default function LeaderModal({ openModal, setOpenModal, leader }) {
                 <div className='line'></div>
                 <h3 className='title'>{leader.title}</h3>
               </div>
-              <div
-                className='modal-right'
-                dangerouslySetInnerHTML={{ __html: leader.bio }}
-              ></div>
+              <div className='modal-right'>
+                <div
+                  className='bio'
+                  dangerouslySetInnerHTML={{ __html: leader.bio }}
+                ></div>
+              </div>
             </div>
           </motion.div>
         </StyledModal>
@@ -96,6 +98,7 @@ const StyledModal = styled(motion.div)`
     font-weight: 600;
     letter-spacing: 0.15rem;
     border-radius: 5px;
+    z-index: 99;
     &:hover {
       opacity: 0.9;
     }
@@ -179,6 +182,12 @@ const StyledModal = styled(motion.div)`
     overflow-y: auto;
     p {
       margin-bottom: 0.5rem;
+    }
+    @media screen and (max-width: 640px) {
+      overflow: visible;
+    }
+    .bio {
+      padding-bottom: 5%;
     }
   }
 `
