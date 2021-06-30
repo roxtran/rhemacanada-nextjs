@@ -47,7 +47,7 @@ export default function About() {
             <p>Rhema is committed to I.C.I.T.E (EYE-SIGHT)</p>
             <p>
               <strong>
-                Compassion, Integrity Teamwork, Excellence Innovation
+                Integrity, Compassion, Innovation, Teamwork, Excellence
               </strong>
             </p>
           </div>
