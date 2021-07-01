@@ -58,7 +58,7 @@ export const Menu = ({ topbarMenu, showMenu, setShowMenu }) => {
   return (
     <StyledMenu topbarMenu={topbarMenu} showMenu={showMenu}>
       <Scroll
-        to='hero'
+        to='topbar'
         smooth={true}
         className='nav-link'
         onClick={() => {
