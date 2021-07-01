@@ -9,6 +9,7 @@ export default function Navbar() {
     const position = window.pageYOffset
     setYPosition(position)
     // console.log(position)
+    // test pushing to vercel
   }
 
   useEffect(() => {
