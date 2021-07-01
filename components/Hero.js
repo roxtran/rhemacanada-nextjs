@@ -186,6 +186,7 @@ const StyledHero = styled(motion.section)`
     }
     .text-wrapper {
       left: 5%;
+      bottom: -35%;
       h1 {
         margin-bottom: 1rem;
       }
