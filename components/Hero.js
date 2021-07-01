@@ -117,16 +117,10 @@ const StyledHero = styled(motion.section)`
   overflow: hidden;
   width: 100vw;
   height: 72vh;
-  @media screen and (max-width: 640px) {
-    height: 85vh;
-  }
   ${ImgWrapper} {
     position: absolute;
     width: 100vw;
     height: 72vh;
-    @media screen and (max-width: 640px) {
-      height: 85vh;
-    }
   }
   .img-overlay {
     position: absolute;
@@ -168,7 +162,7 @@ const StyledHero = styled(motion.section)`
     position: absolute;
     width: 590px;
     max-width: 90vw;
-    top: 45%;
+    bottom: -45%;
     left: 10%;
     z-index: 4;
     text-shadow: 0 0 24px rgb(0 0 0 / 15%);
@@ -185,7 +179,16 @@ const StyledHero = styled(motion.section)`
       color: #fff;
     }
     @media screen and (max-width: 640px) {
-      top: 35%;
+    }
+    @media screen and (max-width: 320px) {
+    }
+  }
+  @media screen and (max-width: 640px) {
+    height: 85vh;
+    ${ImgWrapper} {
+      height: 85vh;
+    }
+    .content-wrapper {
       left: 5%;
       h1 {
         margin-bottom: 1rem;
@@ -194,8 +197,14 @@ const StyledHero = styled(motion.section)`
         font-size: 1rem;
       }
     }
-    @media screen and (max-width: 320px) {
-      top: 20%;
+  }
+  @media screen and (max-width: 320px) {
+    height: 100vh;
+    ${ImgWrapper} {
+      height: 100vh;
+    }
+    .content-wrapper {
+      bottom: -25%;
     }
   }
 `
