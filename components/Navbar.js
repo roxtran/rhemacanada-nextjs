@@ -32,23 +32,23 @@ export const SocialIcons = () => {
 export const Menu = () => {
   return (
     <StyledMenu>
-      <Scroll to='topbar' smooth={true}>
-        <a className='nav-link'>Home</a>
+      <Scroll to='topbar' smooth={true} className='nav-link'>
+        Home
       </Scroll>
-      <Scroll to='services' smooth={true} offset={-80}>
-        <a className='nav-link'>What We Do</a>
+      <Scroll to='services' smooth={true} offset={-80} className='nav-link'>
+        What We Do
       </Scroll>
-      <Scroll to='about' smooth={true} offset={-80}>
-        <a className='nav-link'>About Us</a>
+      <Scroll to='about' smooth={true} offset={-80} className='nav-link'>
+        About Us
       </Scroll>
-      <Scroll to='leadership' smooth={true} offset={-50}>
-        <a className='nav-link'>Leadership</a>
+      <Scroll to='leadership' smooth={true} offset={-50} className='nav-link'>
+        Leadership
       </Scroll>
-      <Scroll to='strategy' smooth={true} offset={-200}>
-        <a className='nav-link'>Corporate Strategy</a>
+      <Scroll to='strategy' smooth={true} offset={-200} className='nav-link'>
+        Corporate Strategy
       </Scroll>
-      <Scroll to='contact' smooth={true} offset={-70}>
-        <a className='nav-link'>Contact</a>
+      <Scroll to='contact' smooth={true} offset={-70} className='nav-link'>
+        Contact
       </Scroll>
       <a
         className='nav-link'
@@ -125,7 +125,7 @@ export const StyledMenu = styled.div`
   height: 90%;
   padding: 12px 60px;
   .nav-link {
-    color: #fff;
+    color: #fff !important;
     margin: 0 1rem;
   }
 `
