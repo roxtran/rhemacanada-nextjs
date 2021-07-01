@@ -10,7 +10,7 @@ const Loader = ({ setLoading }) => {
         className='wrapper'
         initial={{ width: 0, x: '-40vw' }}
         animate={{ width: '100vw', x: 0 }}
-        transition={{ duration: 4 }}
+        transition={{ duration: 2 }}
         onAnimationComplete={() => setLoading(false)}
       >
         <motion.div
