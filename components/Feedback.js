@@ -45,10 +45,6 @@ const StyledFeedback = styled(Container)`
   .feedback-wrapper {
     width: 600px;
 
-    @media screen and (max-width: 480px) {
-      max-width: 90vw;
-    }
-
     .form-wrapper {
       display: flex;
       flex-flow: column wrap;
@@ -92,6 +88,12 @@ const StyledFeedback = styled(Container)`
       &:hover {
         box-shadow: 0 10px 24px -8px rgb(20 144 215 / 50%);
       }
+    }
+  }
+  @media screen and (max-width: 640px) {
+    margin-bottom: -3rem;
+    .feedback-wrapper {
+      max-width: 90vw;
     }
   }
 `

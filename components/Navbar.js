@@ -9,7 +9,6 @@ export default function Navbar() {
     const position = window.pageYOffset
     setYPosition(position)
     // console.log(position)
-    // test pushing to vercel
   }
 
   useEffect(() => {
@@ -59,7 +58,7 @@ export const Menu = ({ topbarMenu, showMenu, setShowMenu }) => {
   return (
     <StyledMenu topbarMenu={topbarMenu} showMenu={showMenu}>
       <Scroll
-        to='topbar'
+        to='top'
         smooth={true}
         className='nav-link'
         onClick={() => {
@@ -104,7 +103,7 @@ export const Menu = ({ topbarMenu, showMenu, setShowMenu }) => {
       <Scroll
         to='strategy'
         smooth={true}
-        offset={-200}
+        offset={-80}
         className='nav-link'
         onClick={() => {
           showMenu && setShowMenu(false)

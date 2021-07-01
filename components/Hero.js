@@ -110,19 +110,20 @@ export default function Hero() {
 const StyledHero = styled(motion.section)`
   position: relative;
   top: -90px;
+  margin-bottom: -90px;
   z-index: 0;
   overflow: hidden;
   width: 100vw;
   height: 72vh;
   @media screen and (max-width: 640px) {
-    height: 90vh;
+    height: 85vh;
   }
   ${ImgWrapper} {
     position: absolute;
     width: 100vw;
     height: 72vh;
     @media screen and (max-width: 640px) {
-      height: 90vh;
+      height: 85vh;
     }
   }
   .img-overlay {

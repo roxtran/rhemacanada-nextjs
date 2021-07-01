@@ -63,6 +63,9 @@ export const Container = styled(motion.section)`
   justify-content: center;
   align-items: center;
   padding: 7rem 0 8rem;
+  @media screen and (max-width: 768px) {
+    padding: 4rem 0 4rem;
+  }
 `
 export const Button = styled.a`
   display: inline-block;
