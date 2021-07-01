@@ -52,6 +52,7 @@ export default function Hero() {
   }
   return (
     <StyledHero
+      id='hero'
       variants={fadeIn}
       initial='hidden'
       exit='exit'

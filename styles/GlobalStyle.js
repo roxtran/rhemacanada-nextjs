@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   a {
     cursor: pointer;
+    color: var(--text-color);
     text-decoration: none;
     &:active, &:focus {
       outline: 0;

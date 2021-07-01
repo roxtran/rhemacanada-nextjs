@@ -1,14 +1,17 @@
-import React from 'react'
-import { Container, ImgWrapper } from '../styles/GlobalStyle'
+import React, { useState } from 'react'
+import { ImgWrapper } from '../styles/GlobalStyle'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { HiMail } from 'react-icons/hi'
 import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 import Link from 'next/link'
+import { AiOutlineMenu } from 'react-icons/ai'
+import { Menu } from './Navbar'
 
 export default function Topbar() {
+  const [showMenu, setShowMenu] = useState(false)
   return (
-    <StyledTopbar id='topbar'>
+    <StyledTopbar id='topbar' showMenu={showMenu}>
       <div className='wrapper'>
         <Link href='#'>
           <ImgWrapper>
@@ -41,7 +44,15 @@ export default function Topbar() {
             </div>
           </a>
         </div>
+        <AiOutlineMenu
+          className='burger'
+          onClick={() => {
+            setShowMenu(!showMenu)
+            console.log(showMenu)
+          }}
+        />
       </div>
+      <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
     </StyledTopbar>
   )
 }
@@ -54,14 +65,12 @@ const StyledTopbar = styled.div`
   justify-content: center;
   background: #fff;
   padding: 1rem 0;
-  z-index: 1;
-  @media screen and (max-width: 1024px) {
-    padding: 1rem 1rem;
-  }
+  z-index: 10;
   .wrapper {
     width: 1140px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   ${ImgWrapper} {
     margin: auto auto auto 0;
@@ -73,9 +82,6 @@ const StyledTopbar = styled.div`
   }
   .info-wrapper {
     display: flex;
-    @media screen and (max-width: 1024px) {
-      display: none;
-    }
   }
   .info {
     display: flex;
@@ -93,5 +99,25 @@ const StyledTopbar = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     margin-right: 0.65rem;
+  }
+  .burger {
+    display: none;
+    font-size: 2rem;
+    /* color: var(--text-color); */
+    transition-duration: 0.5s ease;
+    color: ${({ showMenu }) => (showMenu ? '#fff' : 'var(--text-color)')};
+    z-index: 99;
+  }
+  @media screen and (max-width: 1024px) {
+    position: sticky;
+    top: 0;
+    padding: 1rem 1rem;
+    box-shadow: 0 4px 15px 5px rgb(0 0 0 / 5%);
+    .info-wrapper {
+      display: none;
+    }
+    .burger {
+      display: block;
+    }
   }
 `
