@@ -13,7 +13,7 @@ import Loader from '../components/Loader'
 // import { motion } from 'framer-motion'
 
 export default function Home() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
   return (
     <>
