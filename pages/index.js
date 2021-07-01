@@ -13,7 +13,8 @@ import { useState } from 'react'
 export default function Home() {
   const [showMenu, setShowMenu] = useState(false)
   return (
-    <div id='top'>
+    <>
+      <div id='top'></div>
       <Topbar showMenu={showMenu} setShowMenu={setShowMenu} />
       <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
       <Hero />
@@ -24,6 +25,6 @@ export default function Home() {
       <Contact />
       <Feedback />
       <Footer />
-    </div>
+    </>
   )
 }
