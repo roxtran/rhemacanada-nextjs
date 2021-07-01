@@ -6,6 +6,7 @@ import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 import Link from 'next/link'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { Menu } from './Navbar'
+import { Link as Scroll } from 'react-scroll'
 
 export default function Topbar({ showMenu, setShowMenu }) {
   return (
@@ -23,12 +24,12 @@ export default function Topbar({ showMenu, setShowMenu }) {
           </ImgWrapper>
         </Link>
         <div className='info-wrapper'>
-          <a href='#contact'>
+          <Scroll to='contact' smooth={true}>
             <div className='info'>
               <FaMapMarkerAlt className='icon' />
               <p>49-40 Carl Hall Road Toronto, ON, M3K 2C1</p>
             </div>
-          </a>
+          </Scroll>
           <a href='mailto:info@rhemacanada.ca'>
             <div className='info'>
               <HiMail className='icon' />
