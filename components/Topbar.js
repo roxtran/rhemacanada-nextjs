@@ -63,7 +63,7 @@ export default function Topbar({ showMenu, setShowMenu }) {
   )
 }
 
-const StyledTopbar = styled.div`
+const StyledTopbar = styled.section`
   position: relative;
   height: 80px;
   display: flex;

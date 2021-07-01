@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Topbar from '../components/Topbar'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
@@ -8,23 +9,31 @@ import Strategy from '../components/Strategy'
 import Contact from '../components/Contact'
 import Feedback from '../components/Feedback'
 import Footer from '../components/Footer'
-import { useState } from 'react'
+import Loader from '../components/Loader'
+// import { motion } from 'framer-motion'
 
 export default function Home() {
+  const [loading, setLoading] = useState(true)
   const [showMenu, setShowMenu] = useState(false)
   return (
     <>
-      <div id='top'></div>
-      <Topbar showMenu={showMenu} setShowMenu={setShowMenu} />
-      <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
-      <Hero />
-      <Services />
-      <About />
-      <Leadership />
-      <Strategy />
-      <Contact />
-      <Feedback />
-      <Footer />
+      {loading ? (
+        <Loader loading={loading} setLoading={setLoading} />
+      ) : (
+        <>
+          <div id='top'></div>
+          <Topbar showMenu={showMenu} setShowMenu={setShowMenu} />
+          <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
+          <Hero />
+          <Services />
+          <About />
+          <Leadership />
+          <Strategy />
+          <Contact />
+          <Feedback />
+          <Footer />
+        </>
+      )}
     </>
   )
 }

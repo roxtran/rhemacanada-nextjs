@@ -91,7 +91,7 @@ export default function Hero() {
                 </ImgWrapper>
                 <div className='img-overlay'></div>
                 <motion.div
-                  className='content-wrapper'
+                  className='text-wrapper'
                   variants={staggering}
                   initial='hidden'
                   animate='show'
@@ -153,7 +153,7 @@ const StyledHero = styled(motion.section)`
   .arrow-right {
     right: 32px;
   }
-  .content-wrapper {
+  .text-wrapper {
     /* background-color: rgba(255 255 255 / 25%); */
     /* padding: 2rem;
     border-radius: 10px;
@@ -178,17 +178,13 @@ const StyledHero = styled(motion.section)`
     p {
       color: #fff;
     }
-    @media screen and (max-width: 640px) {
-    }
-    @media screen and (max-width: 320px) {
-    }
   }
   @media screen and (max-width: 640px) {
     height: 85vh;
     ${ImgWrapper} {
       height: 85vh;
     }
-    .content-wrapper {
+    .text-wrapper {
       left: 5%;
       h1 {
         margin-bottom: 1rem;
@@ -203,7 +199,7 @@ const StyledHero = styled(motion.section)`
     ${ImgWrapper} {
       height: 100vh;
     }
-    .content-wrapper {
+    .text-wrapper {
       bottom: -25%;
     }
   }
