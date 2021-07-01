@@ -8,9 +8,9 @@ const Loader = ({ setLoading }) => {
     <StyledLoader>
       <motion.div
         className='wrapper'
-        initial={{ width: 0, x: '-50vw' }}
+        initial={{ width: 0, x: '-40vw' }}
         animate={{ width: '100vw', x: 0 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 4 }}
         onAnimationComplete={() => setLoading(false)}
       >
         <motion.div
