@@ -186,7 +186,7 @@ export const StyledMenu = styled.nav`
     min-width: 250px;
     flex-flow: column nowrap;
     box-shadow: 0 4px 25px 0 rgb(0 0 0 / 15%);
-    padding-top: 4rem;
+    padding: 4rem 2rem;
     overflow-y: auto;
     border: none;
     transform-origin: 1px;

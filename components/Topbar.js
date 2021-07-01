@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { HiMail } from 'react-icons/hi'
 import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 import Link from 'next/link'
-import { AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { Menu } from './Navbar'
 
 export default function Topbar({ showMenu, setShowMenu }) {
@@ -42,13 +42,21 @@ export default function Topbar({ showMenu, setShowMenu }) {
             </div>
           </a>
         </div>
-        <AiOutlineMenu
-          className='burger'
-          onClick={() => {
-            setShowMenu(!showMenu)
-            console.log(showMenu)
-          }}
-        />
+        {showMenu ? (
+          <AiOutlineClose
+            className='burger'
+            onClick={() => {
+              setShowMenu(false)
+            }}
+          />
+        ) : (
+          <AiOutlineMenu
+            className='burger'
+            onClick={() => {
+              setShowMenu(true)
+            }}
+          />
+        )}
       </div>
       <Menu topbarMenu={true} showMenu={showMenu} setShowMenu={setShowMenu} />
     </StyledTopbar>
@@ -103,7 +111,8 @@ const StyledTopbar = styled.div`
     font-size: 2rem;
     /* color: var(--text-color); */
     transition-duration: 0.5s ease;
-    color: ${({ showMenu }) => (showMenu ? '#fff' : 'var(--text-color)')};
+    color: ${({ showMenu }) =>
+      showMenu ? 'var(--light-grey-bg)' : 'var(--text-color)'};
     z-index: 99;
   }
   @media screen and (max-width: 1024px) {
