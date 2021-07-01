@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import Link from 'next/link'
+import { Link as Scroll } from 'react-scroll'
 
 export const SocialIcons = () => {
   return (
@@ -31,24 +32,24 @@ export const SocialIcons = () => {
 export const Menu = () => {
   return (
     <StyledMenu>
-      <Link href='#'>
+      <Scroll to='topbar' smooth={true}>
         <a className='nav-link'>Home</a>
-      </Link>
-      <Link href='#services'>
+      </Scroll>
+      <Scroll to='services' smooth={true} offset={-80}>
         <a className='nav-link'>What We Do</a>
-      </Link>
-      <Link href='#about'>
+      </Scroll>
+      <Scroll to='about' smooth={true} offset={-80}>
         <a className='nav-link'>About Us</a>
-      </Link>
-      <Link href='#leadership'>
+      </Scroll>
+      <Scroll to='leadership' smooth={true} offset={-50}>
         <a className='nav-link'>Leadership</a>
-      </Link>
-      <Link href='#strategy'>
+      </Scroll>
+      <Scroll to='strategy' smooth={true} offset={-200}>
         <a className='nav-link'>Corporate Strategy</a>
-      </Link>
-      <Link href='#contact'>
+      </Scroll>
+      <Scroll to='contact' smooth={true} offset={-70}>
         <a className='nav-link'>Contact</a>
-      </Link>
+      </Scroll>
       <a
         className='nav-link'
         href='https://rhemaonline.vercel.app/facility-bookings'
