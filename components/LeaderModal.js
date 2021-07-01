@@ -1,4 +1,4 @@
-import React from 'react'
+import { useRef, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { VscTriangleDown } from 'react-icons/vsc'
@@ -18,11 +18,31 @@ const slideDown = {
   },
 }
 
-export default function LeaderModal({ openModal, setOpenModal, leader }) {
+export default function LeaderModal({ showModal, setShowModal, leader }) {
+  const modalRef = useRef()
+
+  const keyPressed = useCallback(
+    (e) => {
+      if (e.key === 'Escape' && showModal) {
+        setShowModal(false)
+      }
+    },
+    [showModal, setShowModal]
+  )
+
+  useEffect(() => {
+    document.addEventListener('keydown', keyPressed)
+    return () => {
+      document.removeEventListener('keydown', keyPressed)
+    }
+  }, [keyPressed])
+
   return (
     <AnimatePresence exitBeforeEnter>
-      {openModal && leader && (
+      {showModal && leader && (
         <StyledModal
+          ref={modalRef}
+          onClick={() => setShowModal(false)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.25 }}
@@ -35,7 +55,7 @@ export default function LeaderModal({ openModal, setOpenModal, leader }) {
             animate='show'
             exit='exit'
           >
-            <a className='btn-close' onClick={() => setOpenModal(false)}>
+            <a className='btn-close' onClick={() => setShowModal(false)}>
               Close
               <VscTriangleDown className='btn-icon' />
             </a>

@@ -16,15 +16,15 @@ import LeaderModal from './LeaderModal'
 export default function Leadership() {
   const [element, controls] = useScroll()
 
-  const [openModal, setOpenModal] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const [selectedLeader, setSelectedLeader] = useState(null)
 
   return (
     <>
       <LeaderModal
         leader={selectedLeader}
-        openModal={openModal}
-        setOpenModal={setOpenModal}
+        showModal={showModal}
+        setShowModal={setShowModal}
       />
       <StyledLeadership
         id='leadership'
@@ -57,7 +57,7 @@ export default function Leadership() {
                     className='leader'
                     variants={slideUp}
                     onClick={() => {
-                      setOpenModal(true)
+                      setShowModal(true)
                       setSelectedLeader(leader)
                     }}
                   >
@@ -98,7 +98,7 @@ export default function Leadership() {
                     className='leader'
                     variants={slideUp}
                     onClick={() => {
-                      setOpenModal(true)
+                      setShowModal(true)
                       setSelectedLeader(leader)
                     }}
                   >
