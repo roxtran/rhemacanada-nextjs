@@ -11,7 +11,7 @@ const Loader = ({ setLoading }) => {
         initial={{ width: 0, x: '-50vw' }}
         animate={{ width: '100vw', x: 0 }}
         transition={{ duration: 2 }}
-        // onAnimationComplete={() => setLoading(false)}
+        onAnimationComplete={() => setLoading(false)}
       >
         <motion.div
           // initial={{ width: 0 }}
