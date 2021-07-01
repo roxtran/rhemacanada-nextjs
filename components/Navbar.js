@@ -23,7 +23,7 @@ export default function Navbar() {
     <StyledNavbar YPosition={YPosition}>
       <div className='wrapper'>
         <SocialIcons />
-        <Menu showMenu={true} />
+        <Menu topbarMenu={false} />
       </div>
     </StyledNavbar>
   )
@@ -54,14 +54,16 @@ const SocialIcons = () => {
   )
 }
 
-export const Menu = ({ showMenu, setShowMenu }) => {
+export const Menu = ({ topbarMenu, showMenu, setShowMenu }) => {
   return (
-    <StyledMenu showMenu={showMenu}>
+    <StyledMenu topbarMenu={topbarMenu} showMenu={showMenu}>
       <Scroll
         to='hero'
         smooth={true}
         className='nav-link'
-        // onClick={() => setShowMenu(false)}
+        onClick={() => {
+          showMenu && setShowMenu(false)
+        }}
       >
         Home
       </Scroll>
@@ -70,7 +72,9 @@ export const Menu = ({ showMenu, setShowMenu }) => {
         smooth={true}
         offset={-80}
         className='nav-link'
-        // onClick={() => setShowMenu(false)}
+        onClick={() => {
+          showMenu && setShowMenu(false)
+        }}
       >
         What We Do
       </Scroll>
@@ -79,7 +83,9 @@ export const Menu = ({ showMenu, setShowMenu }) => {
         smooth={true}
         offset={-80}
         className='nav-link'
-        // onClick={() => setShowMenu(false)}
+        onClick={() => {
+          showMenu && setShowMenu(false)
+        }}
       >
         About Us
       </Scroll>
@@ -88,7 +94,9 @@ export const Menu = ({ showMenu, setShowMenu }) => {
         smooth={true}
         offset={-50}
         className='nav-link'
-        // onClick={() => setShowMenu(false)}
+        onClick={() => {
+          showMenu && setShowMenu(false)
+        }}
       >
         Leadership
       </Scroll>
@@ -97,7 +105,9 @@ export const Menu = ({ showMenu, setShowMenu }) => {
         smooth={true}
         offset={-200}
         className='nav-link'
-        // onClick={() => setShowMenu(false)}
+        onClick={() => {
+          showMenu && setShowMenu(false)
+        }}
       >
         Corporate Strategy
       </Scroll>
@@ -106,7 +116,9 @@ export const Menu = ({ showMenu, setShowMenu }) => {
         smooth={true}
         offset={-70}
         className='nav-link'
-        // onClick={() => setShowMenu(false)}
+        onClick={() => {
+          showMenu && setShowMenu(false)
+        }}
       >
         Contact
       </Scroll>
@@ -155,7 +167,7 @@ export const StyledIcons = styled.div`
   }
 `
 export const StyledMenu = styled.nav`
-  display: ${({ showMenu }) => (showMenu ? 'flex' : 'none')};
+  display: ${({ topbarMenu }) => (topbarMenu ? 'none' : 'flex')};
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
   height: 90%;

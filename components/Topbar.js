@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { ImgWrapper } from '../styles/GlobalStyle'
 import Image from 'next/image'
 import styled from 'styled-components'
@@ -8,8 +7,7 @@ import Link from 'next/link'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { Menu } from './Navbar'
 
-export default function Topbar() {
-  const [showMenu, setShowMenu] = useState(false)
+export default function Topbar({ showMenu, setShowMenu }) {
   return (
     <StyledTopbar id='topbar' showMenu={showMenu}>
       <div className='wrapper'>
@@ -52,7 +50,7 @@ export default function Topbar() {
           }}
         />
       </div>
-      <Menu showMenu={showMenu} setShowMenu={setShowMenu} />
+      <Menu topbarMenu={true} showMenu={showMenu} setShowMenu={setShowMenu} />
     </StyledTopbar>
   )
 }

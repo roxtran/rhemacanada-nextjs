@@ -8,12 +8,14 @@ import Strategy from '../components/Strategy'
 import Contact from '../components/Contact'
 import Feedback from '../components/Feedback'
 import Footer from '../components/Footer'
+import { useState } from 'react'
 
 export default function Home() {
+  const [showMenu, setShowMenu] = useState(false)
   return (
     <>
-      <Topbar />
-      <Navbar />
+      <Topbar showMenu={showMenu} setShowMenu={setShowMenu} />
+      <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
       <Hero />
       <Services />
       <About />
