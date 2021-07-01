@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export default function Topbar() {
   return (
-    <StyledTopbar>
+    <StyledTopbar id='topbar'>
       <div className='wrapper'>
         <Link href='#'>
           <ImgWrapper>
@@ -47,11 +47,11 @@ export default function Topbar() {
 }
 
 const StyledTopbar = styled.div`
+  position: relative;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   background: #fff;
   padding: 1rem 0;
   z-index: 1;

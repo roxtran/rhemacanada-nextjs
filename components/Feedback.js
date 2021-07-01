@@ -29,7 +29,7 @@ export default function Feedback() {
 
 const StyledFeedback = styled(Container)`
   flex-direction: column;
-  padding: 0 0 6rem;
+  padding: 0 0 8rem;
   h1 {
     text-align: center;
     margin-bottom: 2rem;

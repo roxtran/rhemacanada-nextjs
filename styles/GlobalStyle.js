@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     transition: all 0.1s ease-out;
     font-family: 'Poppins', sans-serif;
   }
-  html, body {
+  body {
     background: #fff;
     width: 100vw;
     overflow-x: hidden;

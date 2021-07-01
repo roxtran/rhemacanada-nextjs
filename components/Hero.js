@@ -108,6 +108,7 @@ export default function Hero() {
 
 const StyledHero = styled(motion.section)`
   position: relative;
+  top: -90px;
   z-index: 0;
   overflow: hidden;
   width: 100vw;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import Link from 'next/link'
@@ -61,8 +61,22 @@ export const Menu = () => {
 }
 
 export default function Navbar() {
+  const [YPosition, setYPosition] = useState(0)
+  const getYPosition = () => {
+    const position = window.pageYOffset
+    setYPosition(position)
+    // console.log(position)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', getYPosition, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', getYPosition)
+    }
+  }, [])
   return (
-    <StyledNavbar>
+    <StyledNavbar YPosition={YPosition}>
       <div className='wrapper'>
         <SocialIcons />
         <Menu />
@@ -72,15 +86,19 @@ export default function Navbar() {
 }
 
 const StyledNavbar = styled.nav`
-  top: 80px;
+  position: sticky;
+  top: 0;
   height: 90px;
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.05);
+  /* background: rgba(255, 255, 255, 0.05); */
+  background: ${({ YPosition }) =>
+    YPosition > 80 ? `var(--blue)` : `rgba(255, 255, 255, 0.05)`};
+  box-shadow: ${({ YPosition }) =>
+    YPosition > 90 ? `0 4px 25px 5px rgb(0 0 0 / 15%)` : null};
   padding: 1.5rem 0;
   .wrapper {
     width: 1140px;
