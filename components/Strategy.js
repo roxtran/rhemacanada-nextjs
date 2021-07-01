@@ -77,7 +77,12 @@ export default function Strategy() {
           </div>
         </div>
         <ImgWrapper variants={slideUp}>
-          <Image src='/img/strategy.jpg' layout='fill' objectFit='cover' />
+          <Image
+            src='/img/strategy.jpg'
+            layout='fill'
+            objectFit='cover'
+            placeholder='blur'
+          />
         </ImgWrapper>
       </div>
     </StyledStrategy>

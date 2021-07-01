@@ -66,6 +66,7 @@ export default function Leadership() {
                         src={leader.smallImg}
                         layout='fill'
                         objectFit='cover'
+                        placeholder='blur'
                       />
                     </ImgWrapper>
                     <p className='name'>{leader.name}</p>

@@ -85,6 +85,8 @@ export default function Hero() {
                     objectFit='cover'
                     objectPosition='top'
                     placeholder='blur'
+                    // loading='eager'
+                    priority='preload'
                   />
                 </ImgWrapper>
                 <div className='img-overlay'></div>
