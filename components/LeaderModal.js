@@ -7,20 +7,18 @@ import { motion, AnimatePresence } from 'framer-motion'
 const slideDown = {
   hidden: { y: -200, opacity: 0 },
   show: {
-    y: [0, -50, 0],
+    y: 0,
     opacity: 1,
-    transition: { duration: 0.25, ease: 'easeIn' },
+    transition: { duration: 0.5, ease: 'easeIn' },
   },
   exit: {
-    opacity: 1,
+    opacity: 0,
     y: 400,
     // transition: { duration: 0.25, ease: 'easeIn' },
   },
 }
 
 export default function LeaderModal({ showModal, setShowModal, leader }) {
-  const modalRef = useRef()
-
   const keyPressed = useCallback(
     (e) => {
       if (e.key === 'Escape' && showModal) {
@@ -41,8 +39,6 @@ export default function LeaderModal({ showModal, setShowModal, leader }) {
     <AnimatePresence exitBeforeEnter>
       {showModal && leader && (
         <StyledModal
-          ref={modalRef}
-          onClick={() => setShowModal(false)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.25 }}
