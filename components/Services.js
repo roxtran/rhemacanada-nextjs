@@ -5,11 +5,7 @@ import { FaChurch, FaCubes } from 'react-icons/fa'
 import { IoMdSchool } from 'react-icons/io'
 import { useScroll } from '../utils/useScroll'
 import { motion } from 'framer-motion'
-import { slideUp } from './Hero'
-
-export const staggering = {
-  show: { transition: { staggerChildren: 0.2, delayChildren: 0.4 } },
-}
+import { staggering, slideUp } from '../styles/animation'
 
 export default function Services() {
   const [element, controls] = useScroll()
@@ -26,13 +22,7 @@ export default function Services() {
       <div className='hide-overflow'>
         <motion.h1 variants={slideUp}>What We Do</motion.h1>
       </div>
-      <Cards
-        variants={slideUp}
-        initial='hidden'
-        exit='exit'
-        animate={controls}
-        ref={element}
-      >
+      <Cards>
         <motion.a
           href='https://rhemaonline.ca'
           target='_blank'

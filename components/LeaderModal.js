@@ -3,20 +3,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { VscTriangleDown } from 'react-icons/vsc'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const slideDown = {
-  hidden: { y: -200, opacity: 0 },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5, ease: 'easeIn' },
-  },
-  exit: {
-    opacity: 0,
-    y: 400,
-    // transition: { duration: 0.25, ease: 'easeIn' },
-  },
-}
+import { slideDown } from '../styles/animation'
 
 export default function LeaderModal({ showModal, setShowModal, leader }) {
   const keyPressed = useCallback(

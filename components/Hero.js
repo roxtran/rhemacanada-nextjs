@@ -9,21 +9,10 @@ import {
 } from 'react-icons/io'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScroll } from '../utils/useScroll'
+import { fade, slideUp } from '../styles/animation'
 
-export const staggering = {
+const staggering = {
   show: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
-}
-
-const fadeIn = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.5 } },
-  exit: { opacity: 0 },
-}
-
-export const slideUp = {
-  hidden: { opacity: 0, y: 60 },
-  show: { opacity: 1, y: 0, transition: { ease: 'easeInOut', duration: 0.5 } },
-  exit: { opacity: 0, y: 60 },
 }
 
 export default function Hero() {
@@ -53,7 +42,7 @@ export default function Hero() {
   return (
     <StyledHero
       id='hero'
-      variants={fadeIn}
+      variants={fade}
       initial='hidden'
       exit='exit'
       animate={controls}

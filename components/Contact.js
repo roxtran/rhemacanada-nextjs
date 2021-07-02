@@ -3,8 +3,7 @@ import { Container, ImgWrapper } from '../styles/GlobalStyle'
 import styled from 'styled-components'
 import { useScroll } from '../utils/useScroll'
 import { motion } from 'framer-motion'
-import { slideUp } from './Hero'
-import { staggering } from './Services'
+import { staggering, slideUp } from '../styles/animation'
 
 export default function Contact() {
   const [element, controls] = useScroll()

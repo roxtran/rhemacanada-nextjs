@@ -4,8 +4,7 @@ import styled from 'styled-components'
 import { Cards } from './Services'
 import { useScroll } from '../utils/useScroll'
 import { motion } from 'framer-motion'
-import { slideUp } from './Hero'
-import { staggering } from './Services'
+import { staggering, slideUp } from '../styles/animation'
 
 export default function About() {
   const [element, controls] = useScroll()
