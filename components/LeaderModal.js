@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, useRef } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { VscTriangleDown } from 'react-icons/vsc'
@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { slideDown } from '../styles/animation'
 
 export default function LeaderModal({ showModal, setShowModal, leader }) {
+  const modalRef = useRef(null)
+
   const keyPressed = useCallback(
     (e) => {
       if (e.key === 'Escape' && showModal) {
@@ -14,6 +16,10 @@ export default function LeaderModal({ showModal, setShowModal, leader }) {
     },
     [showModal, setShowModal]
   )
+
+  const closeModal = (e) => {
+    if (modalRef.current === e.target) setShowModal(false)
+  }
 
   useEffect(() => {
     document.addEventListener('keydown', keyPressed)
@@ -26,6 +32,8 @@ export default function LeaderModal({ showModal, setShowModal, leader }) {
     <AnimatePresence exitBeforeEnter>
       {showModal && leader && (
         <StyledModal
+          ref={modalRef}
+          onClick={closeModal}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.25 }}
