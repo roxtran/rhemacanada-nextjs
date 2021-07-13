@@ -32,6 +32,7 @@ export default function LeaderModal({ showModal, setShowModal, leader }) {
     <AnimatePresence exitBeforeEnter>
       {showModal && leader && (
         <StyledModal
+          className='modal-leader'
           ref={modalRef}
           onClick={closeModal}
           initial={{ opacity: 0 }}
