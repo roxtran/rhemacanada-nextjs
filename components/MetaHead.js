@@ -3,6 +3,23 @@ import Head from 'next/head'
 const MetaHead = () => {
   return (
     <Head>
+      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.GOOGLE_ANALYTICS_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
       <title>Rhema Canada - What We Do, About Us, Our LeaderShip...</title>
       <meta
         name='description'
@@ -43,23 +60,6 @@ const MetaHead = () => {
       <link
         href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'
         rel='stylesheet'
-      />
-      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.GOOGLE_ANALYTICS_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-        }}
       />
     </Head>
   )
