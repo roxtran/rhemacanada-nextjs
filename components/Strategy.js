@@ -1,13 +1,13 @@
-import React from 'react'
-import { Container, ImgWrapper } from '../styles/GlobalStyle'
-import styled from 'styled-components'
-import Image from 'next/image'
-import { useScroll } from '../utils/useScroll'
-import { motion } from 'framer-motion'
-import { staggering, slideUp } from '../styles/animation'
+import React from 'react';
+import { Container, ImgWrapper } from '../styles/GlobalStyle';
+import styled from 'styled-components';
+import Image from 'next/image';
+import { useScroll } from '../utils/useScroll';
+import { motion } from 'framer-motion';
+import { staggering, slideUp } from '../styles/animation';
 
 export default function Strategy() {
-  const [element, controls] = useScroll()
+  const [element, controls] = useScroll();
 
   return (
     <StyledStrategy
@@ -20,60 +20,35 @@ export default function Strategy() {
       <div className='wrapper'>
         <div className='content'>
           <motion.h1 variants={slideUp}>Corporate Strategy</motion.h1>
-          <motion.p className='desc' variants={slideUp}>
-            Through a data driven approach and intimate knowledge of our local &
-            global clients we develop products & services that meet people at
-            the point of their need, transform lives, while sustaining positive
-            growth.
-          </motion.p>
+          <motion.h2 variants={slideUp}>Our Threefold Strategy:</motion.h2>
           <div className='items'>
             <motion.div variants={slideUp} className='item'>
               <div className='number'>01</div>
               <div className='text-wrapper'>
-                <div className='high-light'>
-                  Supporting Spiritual Excellence:
-                </div>
-                <div className='text'>
-                  Deliver with excellence a Spirit-filled worship & ministry
-                  experience that is innovative, relevant and that serves
-                  broader communities.
-                </div>
+                <div className='high-light'>Identify the needs</div>
               </div>
             </motion.div>
             <motion.div variants={slideUp} className='item'>
               <div className='number'>02</div>
               <div className='text-wrapper'>
-                <div className='high-light'>Affecting Human Wellness:</div>
-                <div className='text'>
-                  Deliver holistic programs and services that addresses the
-                  spiritual, social and economic well-being of the individual,
-                  family, and community.
+                <div className='high-light'>
+                  Develop the products & services
                 </div>
               </div>
             </motion.div>
             <motion.div variants={slideUp} className='item'>
               <div className='number'>03</div>
               <div className='text-wrapper'>
-                <div className='high-light'>
-                  Creating Sustainable Communities:
-                </div>
-                <div className='text'>
-                  Feed, clothe, shelter, integrate and empower those within the
-                  broader community who are unable to do so.
-                </div>
-              </div>
-            </motion.div>
-            <motion.div variants={slideUp} className='item'>
-              <div className='number'>04</div>
-              <div className='text-wrapper'>
-                <div className='high-light'>Building A Better World:</div>
-                <div className='text'>
-                  Engage in meaningful educational, missional and environmental
-                  initiatives that further human growth and progress.
-                </div>
+                <div className='high-light'>Sustain the change</div>
               </div>
             </motion.div>
           </div>
+          <motion.p className='desc' variants={slideUp}>
+            Through a data driven approach and intimate knowledge of our local &
+            global clients we develop products & services that meet people at
+            the point of their need, transform lives, while sustaining positive
+            growth.
+          </motion.p>
         </div>
         <ImgWrapper variants={slideUp}>
           <Image
@@ -85,7 +60,7 @@ export default function Strategy() {
         </ImgWrapper>
       </div>
     </StyledStrategy>
-  )
+  );
 }
 
 const StyledStrategy = styled(Container)`
@@ -104,6 +79,7 @@ const StyledStrategy = styled(Container)`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 2rem;
     h1 {
       margin-bottom: 1rem;
     }
@@ -114,13 +90,14 @@ const StyledStrategy = styled(Container)`
   }
   .items {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    margin: 2rem 0;
+    margin: 1rem 0 0;
   }
   .item {
     flex: 40%;
     display: flex;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     &:not(:nth-child(2)):not(:nth-child(4)) {
       margin-right: 2rem;
     }
@@ -143,4 +120,4 @@ const StyledStrategy = styled(Container)`
       width: 100%;
     }
   }
-`
+`;
