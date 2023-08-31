@@ -1,40 +1,29 @@
-import React from 'react'
-import { Container } from '../styles/GlobalStyle'
-import styled from 'styled-components'
-import { FaChurch, FaCubes } from 'react-icons/fa'
-import { IoMdSchool } from 'react-icons/io'
-import { useScroll } from '../utils/useScroll'
-import { motion } from 'framer-motion'
-import { staggering, slideUp } from '../styles/animation'
+import React from "react";
+import { Container } from "../styles/GlobalStyle";
+import styled from "styled-components";
+import { FaChurch, FaCubes } from "react-icons/fa";
+import { IoMdSchool } from "react-icons/io";
+import { useScroll } from "../utils/useScroll";
+import { motion } from "framer-motion";
+import { staggering, slideUp } from "../styles/animation";
 
 export default function Services() {
-  const [element, controls] = useScroll()
+  const [element, controls] = useScroll();
 
   return (
-    <StyledServices
-      id='services'
-      variants={staggering}
-      initial='hidden'
-      exit='exit'
-      animate={controls}
-      ref={element}
-    >
-      <div className='hide-overflow'>
+    <StyledServices id="services" variants={staggering} initial="hidden" exit="exit" animate={controls} ref={element}>
+      <div className="hide-overflow">
         <motion.h1 variants={slideUp}>What We Do</motion.h1>
       </div>
       <Cards>
-        <motion.a
-          href='https://rhemaonline.ca'
-          target='_blank'
-          variants={slideUp}
-        >
-          <div className='card'>
-            <div className='color-overlay'></div>
-            <FaChurch className='icon' />
+        <motion.a href="https://rhemaonline.ca" target="_blank" variants={slideUp}>
+          <div className="card">
+            <div className="color-overlay"></div>
+            <FaChurch className="icon" />
             <h3>Church</h3>
           </div>
         </motion.a>
-        <motion.a
+        {/* <motion.a
           href='http://kingscollegepsc.ca/'
           target='_blank'
           variants={slideUp}
@@ -44,21 +33,17 @@ export default function Services() {
             <IoMdSchool className='icon' />
             <h3>Education</h3>
           </div>
-        </motion.a>
-        <motion.a
-          href='http://rfcanada.org/'
-          target='_blank'
-          variants={slideUp}
-        >
-          <div className='card'>
-            <div className='color-overlay'></div>
-            <FaCubes className='icon' />
+        </motion.a> */}
+        <motion.a href="http://rfcanada.org/" target="_blank" variants={slideUp}>
+          <div className="card">
+            <div className="color-overlay"></div>
+            <FaCubes className="icon" />
             <h3>Foundation</h3>
           </div>
         </motion.a>
       </Cards>
     </StyledServices>
-  )
+  );
 }
 
 const StyledServices = styled(Container)`
@@ -68,7 +53,7 @@ const StyledServices = styled(Container)`
     color: var(--blue);
     margin-bottom: 2.5rem;
   }
-`
+`;
 export const Cards = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
@@ -116,4 +101,4 @@ export const Cards = styled(motion.div)`
     margin-bottom: 1.25rem;
     z-index: 1;
   }
-`
+`;
