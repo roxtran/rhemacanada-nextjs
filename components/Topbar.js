@@ -1,67 +1,61 @@
-import { ImgWrapper } from '../styles/GlobalStyle'
-import Image from 'next/image'
-import styled from 'styled-components'
-import { HiMail } from 'react-icons/hi'
-import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
-import Link from 'next/link'
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
-import { Menu } from './Navbar'
-import { Link as Scroll } from 'react-scroll'
+import { ImgWrapper } from "../styles/GlobalStyle";
+import Image from "next/image";
+import styled from "styled-components";
+import { HiMail } from "react-icons/hi";
+import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import Link from "next/link";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { Menu } from "./Navbar";
+import { Link as Scroll } from "react-scroll";
 
 export default function Topbar({ showMenu, setShowMenu }) {
   return (
-    <StyledTopbar id='topbar' showMenu={showMenu}>
-      <div className='wrapper'>
-        <Link href='#'>
+    <StyledTopbar id="topbar" showMenu={showMenu}>
+      <div className="wrapper">
+        <Link href="#">
           <ImgWrapper>
-            <Image
-              id='logo'
-              src='/img/logo.png'
-              alt='Rhema Canada logo'
-              layout='fill'
-              objectFit='cover'
-            />
+            <Image id="logo" src="/img/logo.png" alt="Rhema Canada logo" layout="fill" objectFit="cover" />
           </ImgWrapper>
         </Link>
-        <div className='info-wrapper'>
-          <Scroll to='contact' smooth={true}>
-            <div className='info'>
-              <FaMapMarkerAlt className='icon' />
-              <p>49-40 Carl Hall Road Toronto, ON, M3K 2C1</p>
+        <div className="info-wrapper">
+          <Scroll to="contact" smooth={true}>
+            <div className="info">
+              <FaMapMarkerAlt className="icon" />
+              <p>Bellevue Manor (The Library Hall) 8083 Jane Street, Concord ON L4K 2M7</p>
             </div>
           </Scroll>
-          <a href='mailto:info@rhemacanada.ca'>
-            <div className='info'>
-              <HiMail className='icon' />
+          <a href="mailto:info@rhemacanada.ca">
+            <div className="info">
+              <HiMail className="icon" />
               <p>info@rhemacanada.ca</p>
             </div>
           </a>
-          <a href='tel:4164961794'>
-            <div className='info'>
-              <FaPhoneAlt className='icon' />
+          <a href="tel:4164961794">
+            <div className="info">
+              <FaPhoneAlt className="icon" />
               <p>(416) 496-1794</p>
             </div>
           </a>
         </div>
         {showMenu ? (
           <AiOutlineClose
-            className='burger'
+            className="burger"
             onClick={() => {
-              setShowMenu(false)
+              setShowMenu(false);
             }}
           />
         ) : (
           <AiOutlineMenu
-            className='burger'
+            className="burger"
             onClick={() => {
-              setShowMenu(true)
+              setShowMenu(true);
             }}
           />
         )}
       </div>
       <Menu topbarMenu={true} showMenu={showMenu} setShowMenu={setShowMenu} />
     </StyledTopbar>
-  )
+  );
 }
 
 const StyledTopbar = styled.section`
@@ -112,8 +106,7 @@ const StyledTopbar = styled.section`
     font-size: 2rem;
     /* color: var(--text-color); */
     transition-duration: 0.5s ease;
-    color: ${({ showMenu }) =>
-      showMenu ? 'var(--light-grey-bg)' : 'var(--text-color)'};
+    color: ${({ showMenu }) => (showMenu ? "var(--light-grey-bg)" : "var(--text-color)")};
     z-index: 99;
   }
   @media screen and (max-width: 1024px) {
@@ -128,4 +121,4 @@ const StyledTopbar = styled.section`
       display: block;
     }
   }
-`
+`;
