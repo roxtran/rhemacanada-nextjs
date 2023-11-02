@@ -16,7 +16,7 @@ export default function Contact() {
           <motion.h2 variants={slideUp}>Toronto Headquarter</motion.h2>
           <div className="line"></div>
           <motion.p variants={slideUp} className="address">
-            Bellevue Manor (The Library Hall) 8083 Jane Street, Concord ON L4K 2M7
+            401 Magnetic Drive Unit 12, Toronto, ON, M3J-3H9
           </motion.p>
           <div className="info">
             <motion.p variants={slideUp}>
@@ -39,7 +39,7 @@ export default function Contact() {
         </div>
         <motion.div variants={slideUp} className="map-wrapper">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11518.215823818044!2d-79.525299!3d43.8028678!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2fa87c0454df%3A0x9c682da6c43b9a8d!2sBellvue%20Manor!5e0!3m2!1sen!2sca!4v1698716086699!5m2!1sen!2sca"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.4707838355193!2d-79.47578342239012!3d43.78384327109618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2e75b2aae517%3A0x43c072f9e706786c!2s401%20Magnetic%20Dr%20Unit%2012%2C%20North%20York%2C%20ON%20M3J%203H9!5e0!3m2!1sen!2sca!4v1698885142652!5m2!1sen!2sca"
             width="1000"
             height="420"
             style={{ border: 0 }}

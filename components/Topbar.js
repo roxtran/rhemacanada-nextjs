@@ -21,7 +21,7 @@ export default function Topbar({ showMenu, setShowMenu }) {
           <Scroll to="contact" smooth={true}>
             <div className="info">
               <FaMapMarkerAlt className="icon" />
-              <p>Bellevue Manor (The Library Hall) 8083 Jane Street, Concord ON L4K 2M7</p>
+              <p>401 Magnetic Drive Unit 12, Toronto, ON, M3J-3H9</p>
             </div>
           </Scroll>
           <a href="mailto:info@rhemacanada.ca">
