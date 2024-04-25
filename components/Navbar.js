@@ -1,138 +1,132 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
-import { Link as Scroll } from 'react-scroll'
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import { Link as Scroll } from "react-scroll";
 
 export default function Navbar() {
-  const [YPosition, setYPosition] = useState(0)
+  const [YPosition, setYPosition] = useState(0);
   const getYPosition = () => {
-    const position = window.pageYOffset
-    setYPosition(position)
+    const position = window.pageYOffset;
+    setYPosition(position);
     // console.log(position)
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', getYPosition, { passive: true })
+    window.addEventListener("scroll", getYPosition, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', getYPosition)
-    }
-  }, [])
+      window.removeEventListener("scroll", getYPosition);
+    };
+  }, []);
 
   return (
     <StyledNavbar YPosition={YPosition}>
-      <div className='wrapper'>
+      <div className="wrapper">
         <SocialIcons />
         <Menu topbarMenu={false} />
       </div>
     </StyledNavbar>
-  )
+  );
 }
 
 const SocialIcons = () => {
   return (
     <StyledIcons>
-      <a
-        href='https://www.facebook.com/Rhemachristianministries/'
-        target='_blank'
-      >
-        <FaFacebookF className='icon' />
+      <a href="https://www.facebook.com/Rhemachristianministries/" target="_blank">
+        <FaFacebookF className="icon" />
       </a>
-      <a href='https://twitter.com/rhemacanada?lang=en' target='_blank'>
-        <FaTwitter className='icon' />
+      <a href="https://twitter.com/rhemacanada?lang=en" target="_blank">
+        <FaTwitter className="icon" />
       </a>
-      <a
-        href='https://www.youtube.com/channel/UCNjybtMYeMfwur19Gd5GvRg'
-        target='_blank'
-      >
-        <FaYoutube className='icon' />
+      <a href="https://www.youtube.com/channel/UCNjybtMYeMfwur19Gd5GvRg" target="_blank">
+        <FaYoutube className="icon" />
       </a>
-      <a href='https://www.instagram.com/rhemacanada/?hl=en' target='_blank'>
-        <FaInstagram className='icon' />
+      <a href="https://www.instagram.com/rhemacanada/?hl=en" target="_blank">
+        <FaInstagram className="icon" />
       </a>
     </StyledIcons>
-  )
-}
+  );
+};
 
 export const Menu = ({ topbarMenu, showMenu, setShowMenu }) => {
   return (
     <StyledMenu topbarMenu={topbarMenu} showMenu={showMenu}>
       <Scroll
-        to='top'
+        to="top"
         smooth={true}
-        className='nav-link'
+        className="nav-link"
         onClick={() => {
-          showMenu && setShowMenu(false)
+          showMenu && setShowMenu(false);
         }}
       >
         Home
       </Scroll>
       <Scroll
-        to='services'
+        to="services"
         smooth={true}
         offset={-80}
-        className='nav-link'
+        className="nav-link"
         onClick={() => {
-          showMenu && setShowMenu(false)
+          showMenu && setShowMenu(false);
         }}
       >
         What We Do
       </Scroll>
       <Scroll
-        to='about'
+        to="about"
         smooth={true}
         offset={-80}
-        className='nav-link'
+        className="nav-link"
         onClick={() => {
-          showMenu && setShowMenu(false)
+          showMenu && setShowMenu(false);
         }}
       >
         About Us
       </Scroll>
       <Scroll
-        to='leadership'
+        to="leadership"
         smooth={true}
         offset={-50}
-        className='nav-link'
+        className="nav-link"
         onClick={() => {
-          showMenu && setShowMenu(false)
+          showMenu && setShowMenu(false);
         }}
       >
         Leadership
       </Scroll>
       <Scroll
-        to='strategy'
+        to="strategy"
         smooth={true}
         offset={-80}
-        className='nav-link'
+        className="nav-link"
         onClick={() => {
-          showMenu && setShowMenu(false)
+          showMenu && setShowMenu(false);
         }}
       >
         Corporate Strategy
       </Scroll>
       <Scroll
-        to='contact'
+        to="contact"
         smooth={true}
         offset={-70}
-        className='nav-link'
+        className="nav-link"
         onClick={() => {
-          showMenu && setShowMenu(false)
+          showMenu && setShowMenu(false);
         }}
       >
         Contact
       </Scroll>
-      <a
+      {/* <a
         className='nav-link'
         href='https://rhemaonline.vercel.app/facility-bookings'
         target='_blank'
         // onClick={() => setShowMenu(false)}
       >
         Book An Event
-      </a>
+      </a> */}
     </StyledMenu>
-  )
-}
+  );
+};
 
 const StyledNavbar = styled.nav`
   position: sticky;
@@ -144,10 +138,8 @@ const StyledNavbar = styled.nav`
   width: 100vw;
   z-index: 10;
   /* background: rgba(255, 255, 255, 0.05); */
-  background: ${({ YPosition }) =>
-    YPosition > 80 ? `var(--blue)` : `rgba(255, 255, 255, 0.05)`};
-  box-shadow: ${({ YPosition }) =>
-    YPosition > 90 ? `0 4px 25px 0 rgb(0 0 0 / 15%)` : null};
+  background: ${({ YPosition }) => (YPosition > 80 ? `var(--blue)` : `rgba(255, 255, 255, 0.05)`)};
+  box-shadow: ${({ YPosition }) => (YPosition > 90 ? `0 4px 25px 0 rgb(0 0 0 / 15%)` : null)};
   padding: 1.5rem 0;
   .wrapper {
     width: 1140px;
@@ -157,7 +149,7 @@ const StyledNavbar = styled.nav`
   @media screen and (max-width: 1024px) {
     display: none;
   }
-`
+`;
 export const StyledIcons = styled.div`
   padding: 12px 0;
 
@@ -165,9 +157,9 @@ export const StyledIcons = styled.div`
     color: #fff;
     margin-right: 1rem;
   }
-`
+`;
 export const StyledMenu = styled.nav`
-  display: ${({ topbarMenu }) => (topbarMenu ? 'none' : 'flex')};
+  display: ${({ topbarMenu }) => (topbarMenu ? "none" : "flex")};
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
   height: 90%;
@@ -191,11 +183,10 @@ export const StyledMenu = styled.nav`
     border: none;
     transform-origin: 1px;
     transition: all 0.3s ease-out;
-    transform: ${({ showMenu }) =>
-      showMenu ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${({ showMenu }) => (showMenu ? "translateX(0)" : "translateX(100%)")};
     opacity: ${({ showMenu }) => (showMenu ? 1 : 0)};
     .nav-link {
       margin: 1rem 0;
     }
   }
-`
+`;
