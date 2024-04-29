@@ -1,12 +1,20 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 export default function Footer() {
   return (
     <StyledFooter>
-      &copy; {new Date().getFullYear()} Rhema Canada. All rights reserved.
+      <div>
+        &copy; {new Date().getFullYear()} Rhema Canada. All rights reserved. |&nbsp;
+        <a
+          href="https://cms.rhemacanada.com/rhemaonline/wp-content/uploads/2024/04/RC-Website-Privacy-Policy.pdf"
+          target="_blank"
+        >
+          Privacy Policy
+        </a>
+      </div>
     </StyledFooter>
-  )
+  );
 }
 
 const StyledFooter = styled.footer`
@@ -14,7 +22,12 @@ const StyledFooter = styled.footer`
   font-size: 0.9rem;
   border-top: 1px solid var(--grey-line);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 60px;
-`
+
+  div {
+    text-align: center;
+  }
+`;
