@@ -6,12 +6,7 @@ export default function Footer() {
     <StyledFooter>
       <div>
         &copy; {new Date().getFullYear()} Rhema Canada. All rights reserved. |&nbsp;
-        <a
-          href="https://cms.rhemacanada.com/rhemaonline/wp-content/uploads/2024/04/RC-Website-Privacy-Policy.pdf"
-          target="_blank"
-        >
-          Privacy Policy
-        </a>
+        <a href="/privacy-policy">Privacy Policy</a>
       </div>
     </StyledFooter>
   );
