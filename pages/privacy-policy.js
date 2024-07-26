@@ -562,7 +562,7 @@ const PrivacyPolicy = () => {
   );
 };
 
-const HeadLineWrapper = styled.div`
+export const HeadLineWrapper = styled.div`
   position: relative;
   height: 20rem;
   img {
@@ -598,7 +598,7 @@ const HeadLineWrapper = styled.div`
   }
 `;
 
-const PrivacyContainer = styled(Container)`
+export const PrivacyContainer = styled(Container)`
   padding: 2rem 0;
   word-wrap: break-word;
 
@@ -611,6 +611,7 @@ const PrivacyContainer = styled(Container)`
     }
 
     p,
+    ol,
     ul {
       margin-bottom: 1rem;
     }
