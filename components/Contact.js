@@ -1,9 +1,10 @@
+import { Container } from "../styles/GlobalStyle";
+import { slideUp, staggering } from "../styles/animation";
+
+import { motion } from "framer-motion";
 import React from "react";
-import { Container, ImgWrapper } from "../styles/GlobalStyle";
 import styled from "styled-components";
 import { useScroll } from "../utils/useScroll";
-import { motion } from "framer-motion";
-import { staggering, slideUp } from "../styles/animation";
 
 export default function Contact() {
   const [element, controls] = useScroll();
@@ -16,7 +17,7 @@ export default function Contact() {
           <motion.h2 variants={slideUp}>Toronto Headquarter</motion.h2>
           <div className="line"></div>
           <motion.p variants={slideUp} className="address">
-            401 Magnetic Drive Unit 12, Toronto, ON, M3J-3H9
+            3858 Chesswood Drive, North York, ON, M3J 2W6
           </motion.p>
           <div className="info">
             <motion.p variants={slideUp}>

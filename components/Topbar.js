@@ -1,13 +1,13 @@
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
-import Image from "next/image";
-import Link from "next/link";
 import { HiMail } from "react-icons/hi";
+import Image from "next/image";
+import { ImgWrapper } from "../styles/GlobalStyle";
+import Link from "next/link";
+import { Menu } from "./Navbar";
 import { Link as Scroll } from "react-scroll";
 import styled from "styled-components";
-import { ImgWrapper } from "../styles/GlobalStyle";
-import { Menu } from "./Navbar";
 
 export default function Topbar({ showMenu, setShowMenu }) {
   return (
@@ -22,7 +22,7 @@ export default function Topbar({ showMenu, setShowMenu }) {
           <Scroll to="contact" smooth={true}>
             <div className="info">
               <FaMapMarkerAlt className="icon" />
-              <p>401 Magnetic Drive Unit 12, Toronto, ON, M3J-3H9</p>
+              <p>3858 Chesswood Drive, North York, ON, M3J 2W6</p>
             </div>
           </Scroll>
           <a href="mailto:info@rhemacanada.ca">
