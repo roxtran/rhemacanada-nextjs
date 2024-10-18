@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+
 import { Link as Scroll } from "react-scroll";
+import styled from "styled-components";
 
 export default function Navbar() {
   const [YPosition, setYPosition] = useState(0);

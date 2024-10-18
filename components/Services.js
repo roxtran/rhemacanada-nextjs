@@ -1,11 +1,11 @@
-import React from "react";
-import { Container } from "../styles/GlobalStyle";
-import styled from "styled-components";
 import { FaChurch, FaCubes } from "react-icons/fa";
-import { IoMdSchool } from "react-icons/io";
-import { useScroll } from "../utils/useScroll";
+import { slideUp, staggering } from "../styles/animation";
+
 import { motion } from "framer-motion";
-import { staggering, slideUp } from "../styles/animation";
+import React from "react";
+import styled from "styled-components";
+import { Container } from "../styles/GlobalStyle";
+import { useScroll } from "../utils/useScroll";
 
 export default function Services() {
   const [element, controls] = useScroll();

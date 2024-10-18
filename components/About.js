@@ -1,59 +1,49 @@
-import React from 'react'
-import { Container } from '../styles/GlobalStyle'
-import styled from 'styled-components'
-import { Cards } from './Services'
-import { useScroll } from '../utils/useScroll'
-import { motion } from 'framer-motion'
-import { staggering, slideUp } from '../styles/animation'
+import { slideUp, staggering } from "../styles/animation";
+
+import { motion } from "framer-motion";
+import React from "react";
+import styled from "styled-components";
+import { Container } from "../styles/GlobalStyle";
+import { useScroll } from "../utils/useScroll";
+import { Cards } from "./Services";
 
 export default function About() {
-  const [element, controls] = useScroll()
+  const [element, controls] = useScroll();
   return (
-    <StyledAbout
-      id='about'
-      variants={staggering}
-      initial='hidden'
-      animate={controls}
-      ref={element}
-    >
+    <StyledAbout id="about" variants={staggering} initial="hidden" animate={controls} ref={element}>
       <motion.h1 variants={slideUp}>About Us</motion.h1>
-      <div className='blue-bg'></div>
+      <div className="blue-bg"></div>
       <AboutCards>
         <motion.a variants={slideUp}>
-          <div className='card'>
-            <div className='color-overlay'></div>
+          <div className="card">
+            <div className="color-overlay"></div>
             <h2>Our Vision</h2>
-            <div className='line'></div>
+            <div className="line"></div>
             <p>We empower people to live better lives.</p>
           </div>
         </motion.a>
         <motion.a variants={slideUp}>
-          <div className='card'>
-            <div className='color-overlay'></div>
+          <div className="card">
+            <div className="color-overlay"></div>
             <h2>Our Mission</h2>
-            <div className='line'></div>
-            <p>
-              We change and affect lives by offering products & services that
-              meet people at their point of need.
-            </p>
+            <div className="line"></div>
+            <p>We change and affect lives by offering products & services that meet people at their point of need.</p>
           </div>
         </motion.a>
         <motion.a variants={slideUp}>
-          <div className='card'>
-            <div className='color-overlay'></div>
+          <div className="card">
+            <div className="color-overlay"></div>
             <h2>Core Values</h2>
-            <div className='line'></div>
+            <div className="line"></div>
             <p>Rhema is committed to I.C.I.T.E (EYE-SIGHT)</p>
             <p>
-              <strong>
-                Integrity, Compassion, Innovation, Teamwork, Excellence
-              </strong>
+              <strong>Integrity, Compassion, Innovation, Teamwork, Excellence</strong>
             </p>
           </div>
         </motion.a>
       </AboutCards>
     </StyledAbout>
-  )
+  );
 }
 
 const StyledAbout = styled(Container)`
@@ -75,7 +65,7 @@ const StyledAbout = styled(Container)`
     color: #fff;
     margin-bottom: 2.5rem;
   }
-`
+`;
 const AboutCards = styled(Cards)`
   a:hover {
     h2 {
@@ -111,4 +101,4 @@ const AboutCards = styled(Cards)`
     font-weight: 600;
     font-style: italic;
   }
-`
+`;

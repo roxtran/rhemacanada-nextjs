@@ -1,61 +1,46 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { slides } from '../data/slides'
-import { ImgWrapper } from '../styles/GlobalStyle'
-import Image from 'next/image'
-import {
-  IoIosArrowDroprightCircle,
-  IoIosArrowDropleftCircle,
-} from 'react-icons/io'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useScroll } from '../utils/useScroll'
-import { fade, slideUp } from '../styles/animation'
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
+import { fade, slideUp } from "../styles/animation";
+
+import Image from "next/image";
+import styled from "styled-components";
+import { slides } from "../data/slides";
+import { ImgWrapper } from "../styles/GlobalStyle";
+import { useScroll } from "../utils/useScroll";
 
 const staggering = {
   show: { transition: { staggerChildren: 0.1, delayChildren: 0.25 } },
-}
+};
 
 export default function Hero() {
-  const [element, controls] = useScroll()
+  const [element, controls] = useScroll();
 
-  const [current, setCurrent] = useState(0)
-  const length = slides.length
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
 
   useEffect(() => {
-    const autoPlay = setTimeout(handleNextSlide, 10000)
+    const autoPlay = setTimeout(handleNextSlide, 10000);
 
     return () => {
-      clearTimeout(autoPlay)
-    }
-  })
+      clearTimeout(autoPlay);
+    };
+  });
 
   const handlePrevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1)
-  }
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
   const handleNextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1)
-  }
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
 
   if (!Array.isArray(slides) || slides.length <= 0) {
-    return null
+    return null;
   }
   return (
-    <StyledHero
-      id='hero'
-      variants={fade}
-      initial='hidden'
-      exit='exit'
-      animate={controls}
-      ref={element}
-    >
-      <IoIosArrowDropleftCircle
-        className='arrow arrow-left'
-        onClick={handlePrevSlide}
-      />
-      <IoIosArrowDroprightCircle
-        className='arrow arrow-right'
-        onClick={handleNextSlide}
-      />
+    <StyledHero id="hero" variants={fade} initial="hidden" exit="exit" animate={controls} ref={element}>
+      <IoIosArrowDropleftCircle className="arrow arrow-left" onClick={handlePrevSlide} />
+      <IoIosArrowDroprightCircle className="arrow arrow-right" onClick={handleNextSlide} />
       {slides.map((slide, index) => {
         return (
           <AnimatePresence key={index}>
@@ -65,37 +50,31 @@ export default function Hero() {
                   initial={{ scale: 1.15, zIndex: 2, opacity: 0.5 }}
                   animate={{ scale: 1, zIndex: 1, opacity: 1 }}
                   exit={{ scale: 0.8, zIndex: 0, opacity: 0.5 }}
-                  transition={{ duration: 0.5, ease: 'easeOut' }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                   <Image
                     src={slide.imgUrl}
-                    alt='slide-item'
-                    layout='fill'
-                    objectFit='cover'
-                    objectPosition='top'
-                    placeholder='blur'
+                    alt="slide-item"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="top"
+                    placeholder="blur"
                     // loading='eager'
-                    priority='preload'
+                    priority="preload"
                   />
                 </ImgWrapper>
-                <div className='img-overlay'></div>
-                <motion.div
-                  className='text-wrapper'
-                  variants={staggering}
-                  initial='hidden'
-                  animate='show'
-                  exit='exit'
-                >
+                <div className="img-overlay"></div>
+                <motion.div className="text-wrapper" variants={staggering} initial="hidden" animate="show" exit="exit">
                   <motion.h1 variants={slideUp}>{slide.h1}</motion.h1>
                   <motion.p variants={slideUp}>{slide.p}</motion.p>
                 </motion.div>
               </>
             )}
           </AnimatePresence>
-        )
+        );
       })}
     </StyledHero>
-  )
+  );
 }
 
 const StyledHero = styled(motion.section)`
@@ -115,11 +94,7 @@ const StyledHero = styled(motion.section)`
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.1),
-      rgba(0, 0, 0, 0.1)
-    );
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
     width: 100%;
     height: 100%;
     z-index: 3;
@@ -193,4 +168,4 @@ const StyledHero = styled(motion.section)`
       bottom: -25%;
     }
   }
-`
+`;

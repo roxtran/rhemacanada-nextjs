@@ -1,15 +1,15 @@
 // import { ImgWrapper } from '../styles/GlobalStyle'
-import Image from 'next/image'
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
+
+import { motion } from "framer-motion";
+import styled from "styled-components";
 
 const Loader = ({ setLoading }) => {
   return (
     <StyledLoader>
       <motion.div
-        className='wrapper'
-        initial={{ width: 0, x: '-40vw' }}
-        animate={{ width: '100vw', x: 0 }}
+        className="wrapper"
+        initial={{ width: 0, x: "-40vw" }}
+        animate={{ width: "100vw", x: 0 }}
         transition={{ duration: 2 }}
         onAnimationComplete={() => setLoading(false)}
       >
@@ -17,14 +17,14 @@ const Loader = ({ setLoading }) => {
           // initial={{ width: 0 }}
           // animate={{ width: '40vw' }}
           // transition={{ duration: 2 }}
-          className='logo'
+          className="logo"
         ></motion.div>
       </motion.div>
     </StyledLoader>
-  )
-}
+  );
+};
 
-export default Loader
+export default Loader;
 
 const StyledLoader = styled.div`
   position: relative;
@@ -47,7 +47,7 @@ const StyledLoader = styled.div`
 
   .logo {
     background: #fff;
-    mask-image: url('/img/logo-mask.png');
+    mask-image: url("/img/logo-mask.png");
     mask-size: cover;
     mask-position: center;
     mask-repeat: no-repeat;
@@ -59,4 +59,4 @@ const StyledLoader = styled.div`
       height: 60vh;
     }
   }
-`
+`;

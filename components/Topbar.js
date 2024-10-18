@@ -1,13 +1,13 @@
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
-import { HiMail } from "react-icons/hi";
 import Image from "next/image";
-import { ImgWrapper } from "../styles/GlobalStyle";
 import Link from "next/link";
-import { Menu } from "./Navbar";
+import { HiMail } from "react-icons/hi";
 import { Link as Scroll } from "react-scroll";
 import styled from "styled-components";
+import { ImgWrapper } from "../styles/GlobalStyle";
+import { Menu } from "./Navbar";
 
 export default function Topbar({ showMenu, setShowMenu }) {
   return (

@@ -1,29 +1,25 @@
-import React from 'react'
-import FeedbackForm from './FeedbackForm'
-import { Container } from '../styles/GlobalStyle'
-import styled from 'styled-components'
-import { useScroll } from '../utils/useScroll'
-import { motion } from 'framer-motion'
-import { staggering, slideUp } from '../styles/animation'
+import { slideUp, staggering } from "../styles/animation";
+
+import { motion } from "framer-motion";
+import React from "react";
+import styled from "styled-components";
+import { Container } from "../styles/GlobalStyle";
+import { useScroll } from "../utils/useScroll";
+import FeedbackForm from "./FeedbackForm";
 
 export default function Feedback() {
-  const [element, controls] = useScroll()
+  const [element, controls] = useScroll();
 
   return (
-    <StyledFeedback
-      variants={staggering}
-      initial='hidden'
-      animate={controls}
-      ref={element}
-    >
-      <div className='wrapper'>
+    <StyledFeedback variants={staggering} initial="hidden" animate={controls} ref={element}>
+      <div className="wrapper">
         <motion.h1 variants={slideUp}>Give Feedback</motion.h1>
-        <motion.div variants={slideUp} className='feedback-wrapper'>
+        <motion.div variants={slideUp} className="feedback-wrapper">
           <FeedbackForm />
         </motion.div>
       </div>
     </StyledFeedback>
-  )
+  );
 }
 
 const StyledFeedback = styled(Container)`
@@ -95,4 +91,4 @@ const StyledFeedback = styled(Container)`
       max-width: 90vw;
     }
   }
-`
+`;

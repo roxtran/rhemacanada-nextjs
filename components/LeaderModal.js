@@ -1,38 +1,39 @@
-import { useEffect, useCallback, useRef } from 'react'
-import styled from 'styled-components'
-import Image from 'next/image'
-import { VscTriangleDown } from 'react-icons/vsc'
-import { motion, AnimatePresence } from 'framer-motion'
-import { slideDown } from '../styles/animation'
+import { AnimatePresence, motion } from "framer-motion";
+import { useCallback, useEffect, useRef } from "react";
+
+import Image from "next/image";
+import { VscTriangleDown } from "react-icons/vsc";
+import styled from "styled-components";
+import { slideDown } from "../styles/animation";
 
 export default function LeaderModal({ showModal, setShowModal, leader }) {
-  const modalRef = useRef(null)
+  const modalRef = useRef(null);
 
   const keyPressed = useCallback(
     (e) => {
-      if (e.key === 'Escape' && showModal) {
-        setShowModal(false)
+      if (e.key === "Escape" && showModal) {
+        setShowModal(false);
       }
     },
     [showModal, setShowModal]
-  )
+  );
 
   const closeModal = (e) => {
-    if (modalRef.current === e.target) setShowModal(false)
-  }
+    if (modalRef.current === e.target) setShowModal(false);
+  };
 
   useEffect(() => {
-    document.addEventListener('keydown', keyPressed)
+    document.addEventListener("keydown", keyPressed);
     return () => {
-      document.removeEventListener('keydown', keyPressed)
-    }
-  }, [keyPressed])
+      document.removeEventListener("keydown", keyPressed);
+    };
+  }, [keyPressed]);
 
   return (
     <AnimatePresence exitBeforeEnter>
       {showModal && leader && (
         <StyledModal
-          className='modal-leader'
+          className="modal-leader"
           ref={modalRef}
           onClick={closeModal}
           initial={{ opacity: 0 }}
@@ -40,44 +41,35 @@ export default function LeaderModal({ showModal, setShowModal, leader }) {
           transition={{ duration: 0.25 }}
           exit={{ opacity: 0 }}
         >
-          <motion.div
-            className='modal-dialog'
-            variants={slideDown}
-            initial='hidden'
-            animate='show'
-            exit='exit'
-          >
-            <a className='btn-close' onClick={() => setShowModal(false)}>
+          <motion.div className="modal-dialog" variants={slideDown} initial="hidden" animate="show" exit="exit">
+            <a className="btn-close" onClick={() => setShowModal(false)}>
               Close
-              <VscTriangleDown className='btn-icon' />
+              <VscTriangleDown className="btn-icon" />
             </a>
-            <div className='modal-content'>
-              <div className='modal-left'>
-                <figure className='img-wrapper'>
+            <div className="modal-content">
+              <div className="modal-left">
+                <figure className="img-wrapper">
                   <Image
                     src={leader.largeImg}
-                    layout='fill'
-                    objectFit='cover'
-                    objectPosition='top'
-                    placeholder='blur'
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="top"
+                    placeholder="blur"
                   />
                 </figure>
-                <h2 className='name'>{leader.name}</h2>
-                <div className='line'></div>
-                <h3 className='title'>{leader.title}</h3>
+                <h2 className="name">{leader.name}</h2>
+                <div className="line"></div>
+                <h3 className="title">{leader.title}</h3>
               </div>
-              <div className='modal-right'>
-                <div
-                  className='bio'
-                  dangerouslySetInnerHTML={{ __html: leader.bio }}
-                ></div>
+              <div className="modal-right">
+                <div className="bio" dangerouslySetInnerHTML={{ __html: leader.bio }}></div>
               </div>
             </div>
           </motion.div>
         </StyledModal>
       )}
     </AnimatePresence>
-  )
+  );
 }
 
 const StyledModal = styled(motion.div)`
@@ -202,4 +194,4 @@ const StyledModal = styled(motion.div)`
       padding-bottom: 5%;
     }
   }
-`
+`;

@@ -1,62 +1,48 @@
-import React from 'react';
-import { Container, ImgWrapper } from '../styles/GlobalStyle';
-import styled from 'styled-components';
-import Image from 'next/image';
-import { useScroll } from '../utils/useScroll';
-import { motion } from 'framer-motion';
-import { staggering, slideUp } from '../styles/animation';
+import { Container, ImgWrapper } from "../styles/GlobalStyle";
+import { slideUp, staggering } from "../styles/animation";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import React from "react";
+import styled from "styled-components";
+import { useScroll } from "../utils/useScroll";
 
 export default function Strategy() {
   const [element, controls] = useScroll();
 
   return (
-    <StyledStrategy
-      id='strategy'
-      variants={staggering}
-      initial='hidden'
-      animate={controls}
-      ref={element}
-    >
-      <div className='wrapper'>
-        <div className='content'>
+    <StyledStrategy id="strategy" variants={staggering} initial="hidden" animate={controls} ref={element}>
+      <div className="wrapper">
+        <div className="content">
           <motion.h1 variants={slideUp}>Corporate Strategy</motion.h1>
           <motion.h2 variants={slideUp}>Our Threefold Strategy:</motion.h2>
-          <div className='items'>
-            <motion.div variants={slideUp} className='item'>
-              <div className='number'>01</div>
-              <div className='text-wrapper'>
-                <div className='high-light'>Identify the needs</div>
+          <div className="items">
+            <motion.div variants={slideUp} className="item">
+              <div className="number">01</div>
+              <div className="text-wrapper">
+                <div className="high-light">Identify the needs</div>
               </div>
             </motion.div>
-            <motion.div variants={slideUp} className='item'>
-              <div className='number'>02</div>
-              <div className='text-wrapper'>
-                <div className='high-light'>
-                  Develop the products & services
-                </div>
+            <motion.div variants={slideUp} className="item">
+              <div className="number">02</div>
+              <div className="text-wrapper">
+                <div className="high-light">Develop the products & services</div>
               </div>
             </motion.div>
-            <motion.div variants={slideUp} className='item'>
-              <div className='number'>03</div>
-              <div className='text-wrapper'>
-                <div className='high-light'>Sustain the change</div>
+            <motion.div variants={slideUp} className="item">
+              <div className="number">03</div>
+              <div className="text-wrapper">
+                <div className="high-light">Sustain the change</div>
               </div>
             </motion.div>
           </div>
-          <motion.p className='desc' variants={slideUp}>
-            Through a data driven approach and intimate knowledge of our local &
-            global clients we develop products & services that meet people at
-            the point of their need, transform lives, while sustaining positive
-            growth.
+          <motion.p className="desc" variants={slideUp}>
+            Through a data driven approach and intimate knowledge of our local & global clients we develop products &
+            services that meet people at the point of their need, transform lives, while sustaining positive growth.
           </motion.p>
         </div>
         <ImgWrapper variants={slideUp}>
-          <Image
-            src='/img/strategy.jpg'
-            layout='fill'
-            objectFit='cover'
-            placeholder='blur'
-          />
+          <Image src="/img/strategy.jpg" layout="fill" objectFit="cover" placeholder="blur" />
         </ImgWrapper>
       </div>
     </StyledStrategy>
