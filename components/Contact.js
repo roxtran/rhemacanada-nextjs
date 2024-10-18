@@ -40,7 +40,7 @@ export default function Contact() {
         </div>
         <motion.div variants={slideUp} className="map-wrapper">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.4707838355193!2d-79.47578342239012!3d43.78384327109618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2e75b2aae517%3A0x43c072f9e706786c!2s401%20Magnetic%20Dr%20Unit%2012%2C%20North%20York%2C%20ON%20M3J%203H9!5e0!3m2!1sen!2sca!4v1698885142652!5m2!1sen!2sca"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.835652908633!2d-79.47637759999999!3d43.7555095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b31fbd6b34c8b%3A0x2021c91c91d3ec98!2s3858%20Chesswood%20Dr%2C%20North%20York%2C%20ON%20M3J%202W6!5e0!3m2!1sen!2sca!4v1729265929089!5m2!1sen!2sca"
             width="1000"
             height="420"
             style={{ border: 0 }}
