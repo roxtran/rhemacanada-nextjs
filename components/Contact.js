@@ -58,11 +58,11 @@ const StyledContact = styled(Container)`
     margin-bottom: 2rem;
   }
   .wrapper {
-    width: 1140px;
+    width: 71.25rem;
     max-width: 90vw;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid var(--grey-line);
+    border: 0.0625rem solid var(--grey-line);
   }
   .content {
     flex: 25%;
@@ -70,7 +70,7 @@ const StyledContact = styled(Container)`
   }
   .line {
     width: 10%;
-    height: 4px;
+    height: 0.25rem;
     background: var(--blue);
     margin: 2rem 0;
   }
@@ -81,16 +81,16 @@ const StyledContact = styled(Container)`
     }
     span {
       float: left;
-      width: 90px;
+      width: 5.625rem;
       font-weight: 600;
     }
   }
   .map-wrapper {
-    width: 650px;
+    width: 40.625rem;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     overflow: hidden;
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 64rem) {
       width: 100%;
     }
   }

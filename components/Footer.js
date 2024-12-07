@@ -15,12 +15,12 @@ export default function Footer() {
 const StyledFooter = styled.footer`
   padding: 1rem;
   font-size: 0.9rem;
-  border-top: 1px solid var(--grey-line);
+  border-top: 0.0625rem solid var(--grey-line);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 3.75rem;
 
   div {
     text-align: center;

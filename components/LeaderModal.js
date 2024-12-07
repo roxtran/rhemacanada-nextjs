@@ -86,10 +86,10 @@ const StyledModal = styled(motion.div)`
   .modal-dialog {
     background: #fff;
     position: relative;
-    width: 1100px;
+    width: 68.75rem;
     max-width: 90vw;
     height: 85vh;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
   }
   .btn-close {
     background-color: var(--blue);
@@ -101,17 +101,17 @@ const StyledModal = styled(motion.div)`
     color: #fff;
     font-weight: 600;
     letter-spacing: 0.15rem;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     z-index: 99;
     &:hover {
       opacity: 0.9;
     }
     .btn-icon {
       position: relative;
-      top: 2px;
+      top: 0.125rem;
       margin-left: 0.35rem;
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40rem) {
       font-size: 0.85rem;
       padding: 0.9rem 2rem;
     }
@@ -124,7 +124,7 @@ const StyledModal = styled(motion.div)`
     justify-content: flex-start;
     align-items: flex-start;
     padding: 6% 0 2% 5%;
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40rem) {
       flex-direction: column;
       padding: 5% 0 5% 5%;
       padding-top: 3rem;
@@ -140,7 +140,7 @@ const StyledModal = styled(motion.div)`
     padding-bottom: 1rem;
     .line {
       background: var(--grey-line);
-      height: 1px;
+      height: 0.0625rem;
       width: 50%;
       margin: 0.5rem 0;
     }
@@ -149,7 +149,7 @@ const StyledModal = styled(motion.div)`
     }
     h3 {
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40rem) {
       margin-right: 0;
       width: 100%;
       padding-right: 5%;
@@ -166,15 +166,16 @@ const StyledModal = styled(motion.div)`
   }
   .img-wrapper {
     position: relative;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     overflow: hidden;
     width: 100%;
-    height: 500px;
+    height: 31.25rem;
+    max-height: 40vh;
     margin-bottom: 1.5rem;
-    box-shadow: -4px 5px 15px -10px rgb(0 0 0 / 0.5);
-    @media screen and (max-width: 640px) {
-      height: 200px;
-      width: 200px;
+    box-shadow: -0.25rem 0.3125rem 0.9375rem -0.625rem rgb(0 0 0 / 0.5);
+    @media screen and (max-width: 40rem) {
+      height: 12.5rem;
+      width: 12.5rem;
       margin-bottom: 1rem;
     }
   }
@@ -187,7 +188,7 @@ const StyledModal = styled(motion.div)`
     p {
       margin-bottom: 0.5rem;
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40rem) {
       overflow: visible;
     }
     .bio {

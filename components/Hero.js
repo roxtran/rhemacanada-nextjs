@@ -79,8 +79,8 @@ export default function Hero() {
 
 const StyledHero = styled(motion.section)`
   position: relative;
-  top: -90px;
-  margin-bottom: -90px;
+  top: -5.625rem;
+  margin-bottom: -5.625rem;
   z-index: 0;
   overflow: hidden;
   width: 100vw;
@@ -112,24 +112,24 @@ const StyledHero = styled(motion.section)`
     }
   }
   .arrow-left {
-    left: 32px;
+    left: 2rem;
   }
   .arrow-right {
-    right: 32px;
+    right: 2rem;
   }
   .text-wrapper {
     /* background-color: rgba(255 255 255 / 25%); */
     /* padding: 2rem;
-    border-radius: 10px;
-    backdrop-filter: blur(5px); */
+    border-radius: 0.625rem;
+    backdrop-filter: blur(0.3125rem); */
     height: 100%;
     position: absolute;
-    width: 590px;
+    width: 36.875rem;
     max-width: 90vw;
     bottom: -45%;
     left: 10%;
     z-index: 4;
-    text-shadow: 0 0 24px rgb(0 0 0 / 15%);
+    text-shadow: 0 0 1.5rem rgb(0 0 0 / 15%);
     h1 {
       font-size: 2.5rem;
       /* margin-bottom: 0.15rem; */
@@ -143,7 +143,7 @@ const StyledHero = styled(motion.section)`
       color: #fff;
     }
   }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 40rem) {
     height: 85vh;
     ${ImgWrapper} {
       height: 85vh;
@@ -159,7 +159,7 @@ const StyledHero = styled(motion.section)`
       }
     }
   }
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 20rem) {
     height: 100vh;
     ${ImgWrapper} {
       height: 100vh;

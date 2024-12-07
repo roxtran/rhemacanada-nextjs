@@ -60,30 +60,42 @@ export default function Topbar({ showMenu, setShowMenu }) {
 }
 
 const StyledTopbar = styled.section`
-  position: relative;
-  height: 80px;
+  position: sticky;
+  top: 0;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fff;
-  padding: 1rem 0;
+  padding: 1rem;
   z-index: 10;
+  box-shadow: 0 0.25rem 0.9375rem 0.3125rem rgb(0 0 0 / 5%);
+
   .wrapper {
-    width: 1140px;
-    display: flex;
-    justify-content: space-between;
+    width: 71.25rem;
+    display: grid;
     align-items: center;
+    grid-template-columns: 1fr auto;
+
+    @media screen and (min-width: 64rem) {
+      grid-template-columns: auto 1fr;
+    }
   }
   ${ImgWrapper} {
     margin: auto auto auto 0;
-    width: 198px;
-    height: 44px;
+    width: 12.375rem;
+    height: 2.75rem;
   }
   #logo {
     cursor: pointer;
   }
   .info-wrapper {
-    display: flex;
+    display: none;
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    @media screen and (min-width: 75rem) {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
   }
   .info {
     display: flex;
@@ -93,33 +105,30 @@ const StyledTopbar = styled.section`
     font-weight: 400;
   }
   .icon {
-    width: 42px;
-    height: 42px;
+    width: 2.625rem;
+    height: 2.625rem;
     font-size: 1.5rem;
     padding: 0.8rem;
     margin: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 0.0625rem solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     margin-right: 0.65rem;
   }
   .burger {
-    display: none;
+    display: block;
     font-size: 2rem;
-    /* color: var(--text-color); */
     transition-duration: 0.5s ease;
     color: ${({ showMenu }) => (showMenu ? "var(--light-grey-bg)" : "var(--text-color)")};
     z-index: 99;
   }
-  @media screen and (max-width: 1024px) {
-    position: sticky;
-    top: 0;
-    padding: 1rem 1rem;
-    box-shadow: 0 4px 15px 5px rgb(0 0 0 / 5%);
+
+  @media screen and (min-width: 64rem) {
+    position: relative;
     .info-wrapper {
-      display: none;
+      display: grid;
     }
     .burger {
-      display: block;
+      display: none;
     }
   }
 `;

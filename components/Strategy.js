@@ -69,7 +69,7 @@ const StyledStrategy = styled(Container)`
     h1 {
       margin-bottom: 1rem;
     }
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 64rem) {
       width: 100%;
       padding: 3rem 3rem 0;
     }
@@ -100,9 +100,9 @@ const StyledStrategy = styled(Container)`
     margin: 0.5rem 0;
   }
   ${ImgWrapper} {
-    height: 600px;
+    height: 37.5rem;
     width: 45%;
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 64rem) {
       width: 100%;
     }
   }

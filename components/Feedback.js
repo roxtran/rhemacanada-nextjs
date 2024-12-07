@@ -30,7 +30,7 @@ const StyledFeedback = styled(Container)`
     margin-bottom: 2rem;
   }
   .wrapper {
-    width: 1140px;
+    width: 71.25rem;
     max-width: 90vw;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@ const StyledFeedback = styled(Container)`
     align-items: center;
   }
   .feedback-wrapper {
-    width: 600px;
+    width: 37.5rem;
 
     .form-wrapper {
       display: flex;
@@ -48,44 +48,44 @@ const StyledFeedback = styled(Container)`
     }
 
     p {
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
     }
 
     input,
     textarea {
       width: 100%;
-      padding: 10px;
-      border: 1px solid var(--grey-line);
-      border-radius: 5px;
-      margin-bottom: 20px;
+      padding: 0.625rem;
+      border: 0.0625rem solid var(--grey-line);
+      border-radius: 0.3125rem;
+      margin-bottom: 1.25rem;
       font-size: 0.85rem;
       font-weight: 400;
 
       :focus {
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        border: 1px solid var(--blue);
+        box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2);
+        border: 0.0625rem solid var(--blue);
         outline: 0;
       }
     }
 
     button {
       font-size: 0.9rem;
-      margin-top: 20px;
+      margin-top: 1.25rem;
       color: #fff;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 0.25rem;
       border: none;
-      border-radius: 50px;
+      border-radius: 3.125rem;
       background-color: var(--blue);
-      padding: 12px 36px;
+      padding: 0.75rem 2.25rem;
       cursor: pointer;
       &:hover {
-        box-shadow: 0 10px 24px -8px rgb(20 144 215 / 50%);
+        box-shadow: 0 0.625rem 1.5rem -0.5rem rgb(20 144 215 / 50%);
       }
     }
   }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 40rem) {
     margin-bottom: -3rem;
     .feedback-wrapper {
       max-width: 90vw;

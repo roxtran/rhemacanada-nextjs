@@ -79,9 +79,9 @@ export const Cards = styled(motion.div)`
     background: var(--light-grey-bg);
     margin: 1rem;
     padding: 2rem 2rem;
-    width: 300px;
-    height: 250px;
-    border-radius: 10px;
+    width: 18.75rem;
+    height: 15.625rem;
+    border-radius: 0.625rem;
   }
   .color-overlay {
     position: absolute;
@@ -92,7 +92,7 @@ export const Cards = styled(motion.div)`
     background: var(--blue);
     transform: scale(0.8);
     opacity: 0;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     z-index: 0;
     transition-duration: 0.2s;
   }

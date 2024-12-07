@@ -49,7 +49,7 @@ export default function About() {
 const StyledAbout = styled(Container)`
   position: relative;
   flex-direction: column;
-  border-bottom: 1px solid var(--grey-line);
+  border-bottom: 0.0625rem solid var(--grey-line);
 
   .blue-bg {
     position: absolute;
@@ -81,15 +81,15 @@ const AboutCards = styled(Cards)`
   }
   .line {
     width: 25%;
-    height: 2px;
+    height: 0.125rem;
     background-color: var(--text-color);
     margin: 1.5rem 0;
     z-index: 1;
   }
   .card {
-    min-height: 350px;
+    min-height: 21.875rem;
     padding: 3rem;
-    border: 3px solid #fff;
+    border: 0.1875rem solid #fff;
   }
   p,
   q {

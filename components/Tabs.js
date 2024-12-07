@@ -37,27 +37,27 @@ const StyledTabs = styled.div`
   width: 100%;
   .tabs {
     display: flex;
-    border-bottom: 2px solid var(--grey-line);
+    border-bottom: 0.125rem solid var(--grey-line);
   }
   .tab {
     padding: 1rem 1.75rem;
     position: relative;
-    top: 2px;
+    top: 0.125rem;
   }
   .tab.current {
     background: #fff;
     font-weight: 500;
-    border: 2px solid var(--grey-line);
+    border: 0.125rem solid var(--grey-line);
     border-bottom: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
   }
   .tab-content {
     padding: 5%;
     text-align: center;
-    border: 2px solid var(--grey-line);
+    border: 0.125rem solid var(--grey-line);
     border-top: 0;
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40rem) {
       /* padding: 2rem; */
     }
   }

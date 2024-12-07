@@ -97,13 +97,13 @@ const StyledLeadership = styled(Container)`
     margin-bottom: 3rem;
   }
   .wrapper {
-    width: 1140px;
+    width: 71.25rem;
     max-width: 95vw;
   }
   .desc {
     margin-bottom: 2rem;
     padding: 1%;
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40rem) {
       margin-top: 1rem;
     }
   }
@@ -114,15 +114,15 @@ const StyledLeadership = styled(Container)`
     flex-wrap: wrap;
   }
   .leader {
-    width: 280px;
-    min-height: 370px;
+    width: 17.5rem;
+    min-height: 23.125rem;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 1.5rem;
-    border: 1px solid var(--grey-line);
+    border: 0.0625rem solid var(--grey-line);
     padding: 2rem;
     overflow: hidden;
     &:hover .leader-overlay {
@@ -131,8 +131,8 @@ const StyledLeadership = styled(Container)`
     }
   }
   ${ImgWrapper} {
-    width: 200px;
-    height: 200px;
+    width: 12.5rem;
+    height: 12.5rem;
     border-radius: 50%;
     overflow: hidden;
     margin-bottom: 1rem;

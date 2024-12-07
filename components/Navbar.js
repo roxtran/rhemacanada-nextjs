@@ -132,27 +132,27 @@ export const Menu = ({ topbarMenu, showMenu, setShowMenu }) => {
 const StyledNavbar = styled.nav`
   position: sticky;
   top: 0;
-  height: 90px;
+  height: 5.625rem;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
   z-index: 10;
   /* background: rgba(255, 255, 255, 0.05); */
-  background: ${({ YPosition }) => (YPosition > 80 ? `var(--blue)` : `rgba(255, 255, 255, 0.05)`)};
-  box-shadow: ${({ YPosition }) => (YPosition > 90 ? `0 4px 25px 0 rgb(0 0 0 / 15%)` : null)};
-  padding: 1.5rem 0;
+  background: ${({ YPosition }) => (YPosition > 80 ? `var(--blue)` : `rgba(0, 0, 0, 0.5)`)};
+  box-shadow: ${({ YPosition }) => (YPosition > 90 ? `0 0.25rem 1.5625rem 0 rgb(0 0 0 / 15%)` : null)};
+  padding: 1.5rem 1rem;
   .wrapper {
-    width: 1140px;
+    width: 71.25rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 64rem) {
     display: none;
   }
 `;
 export const StyledIcons = styled.div`
-  padding: 12px 0;
+  padding: 0.75rem 0;
 
   .icon {
     color: #fff;
@@ -161,28 +161,27 @@ export const StyledIcons = styled.div`
 `;
 export const StyledMenu = styled.nav`
   display: ${({ topbarMenu }) => (topbarMenu ? "none" : "flex")};
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
+  border-left: 0.0625rem solid #fff;
   height: 90%;
-  padding: 12px 60px;
+  padding: 0.75rem 0 0.75rem 3.75rem;
   .nav-link {
     color: #fff !important;
     margin: 0 1rem;
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 64rem) {
     display: flex;
     position: fixed;
     top: 0;
     right: 0;
     background-color: var(--blue);
     height: 100vh;
-    min-width: 250px;
+    min-width: 15.625rem;
     flex-flow: column nowrap;
-    box-shadow: 0 4px 25px 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 0.25rem 1.5625rem 0 rgb(0 0 0 / 15%);
     padding: 4rem 2rem;
     overflow-y: auto;
     border: none;
-    transform-origin: 1px;
+    transform-origin: 0.0625rem;
     transition: all 0.3s ease-out;
     transform: ${({ showMenu }) => (showMenu ? "translateX(0)" : "translateX(100%)")};
     opacity: ${({ showMenu }) => (showMenu ? 1 : 0)};

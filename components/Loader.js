@@ -53,7 +53,7 @@ const StyledLoader = styled.div`
     mask-repeat: no-repeat;
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 40rem) {
     .wrapper,
     .logo {
       height: 60vh;

@@ -1,5 +1,6 @@
-import styled, { createGlobalStyle } from 'styled-components'
-import { motion } from 'framer-motion'
+import styled, { createGlobalStyle } from "styled-components";
+
+import { motion } from "framer-motion";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -31,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 3rem;
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40rem) {
       font-size: 2.75rem;
       line-height: 3rem;
     }
@@ -57,23 +58,23 @@ export const GlobalStyle = createGlobalStyle`
   .hide-overflow {
     overflow: hidden;
   }
-`
+`;
 export const Container = styled(motion.section)`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 7rem 0 8rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 48rem) {
     padding: 4rem 0 4rem;
   }
-`
+`;
 export const Button = styled.a`
   display: inline-block;
   cursor: pointer;
   background: var(--blue);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   color: #fff;
-  padding: 10px 25px;
+  padding: 0.625rem 1.5625rem;
   text-align: center;
   text-transform: capitalize;
   &:hover {
@@ -81,9 +82,9 @@ export const Button = styled.a`
     color: #fff;
     /* box-shadow: var(--shadow); */
   }
-`
+`;
 export const ImgWrapper = styled(motion.div)`
   position: relative;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   overflow: hidden;
-`
+`;
