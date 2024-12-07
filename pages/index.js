@@ -4,13 +4,13 @@ import Contact from "../components/Contact";
 import Culture from "../components/Culture";
 import Feedback from "../components/Feedback";
 import Footer from "../components/Footer";
-import Hero from "../components/Hero";
 import Leadership from "../components/Leadership";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import Services from "../components/Services";
 import Strategy from "../components/Strategy";
 import Topbar from "../components/Topbar";
+import Video from "../components/Video";
 
 // import { motion } from 'framer-motion'
 
@@ -23,10 +23,9 @@ export default function Home() {
         <Loader loading={loading} setLoading={setLoading} />
       ) : (
         <>
-          <div id="top"></div>
           <Topbar showMenu={showMenu} setShowMenu={setShowMenu} />
           <Navbar showMenu={showMenu} setShowMenu={setShowMenu} />
-          <Hero />
+          <Video />
           <Services />
           <About />
           <Culture />
