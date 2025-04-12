@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { executiveBoard as eb, executiveManagementTeam as emt } from "../data/leaders";
+import { boardMembers, executiveManagementTeam, reportingToTheBoard } from "../data/leaders";
 import { slideUp, staggering } from "../styles/animation";
 import { Container, ImgWrapper } from "../styles/GlobalStyle";
 
@@ -30,7 +30,7 @@ export default function Leadership() {
                 leading our future while inspiring us each day.
               </motion.p>
               <div className="leaders" variants={staggering} initial="hidden" animate={controls} ref={element}>
-                {emt.map((leader) => (
+                {executiveManagementTeam.map((leader) => (
                   <motion.a
                     key={leader.name}
                     className="leader"
@@ -53,14 +53,38 @@ export default function Leadership() {
                 ))}
               </div>
             </motion.div>
-            <div label="Executive Board">
+            <div label="Board Members">
               <motion.p className="desc" variants={slideUp}>
                 Tasked with overall governance, our Executive Board ensures that through fiduciary duty, oversight and
                 strategic policies, the vision of our organization is realized. Meet the members of our board who are
                 championing our future success.
               </motion.p>
               <div className="leaders" variants={staggering} initial="hidden" animate={controls} ref={element}>
-                {eb.map((leader) => (
+                {boardMembers.map((leader) => (
+                  <motion.a
+                    key={leader.name}
+                    className="leader"
+                    variants={slideUp}
+                    onClick={() => {
+                      setShowModal(true);
+                      setSelectedLeader(leader);
+                    }}
+                  >
+                    <ImgWrapper>
+                      <Image src={leader.smallImg} layout="fill" objectFit="cover" />
+                    </ImgWrapper>
+                    <p className="name">{leader.name}</p>
+                    <p className="title">{leader.title}</p>
+                    <div className="leader-overlay">
+                      <p className="name">{leader.name}</p>
+                      <p className="title">{leader.title}</p>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+              <motion.h2 variants={slideUp}>Reporting To The Board</motion.h2>
+              <div className="leaders" variants={staggering} initial="hidden" animate={controls} ref={element}>
+                {reportingToTheBoard.map((leader) => (
                   <motion.a
                     key={leader.name}
                     className="leader"
@@ -94,7 +118,10 @@ const StyledLeadership = styled(Container)`
   flex-direction: column;
   h1 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
+  }
+  h2 {
+    margin-top: 3rem;
   }
   .wrapper {
     width: 71.25rem;
