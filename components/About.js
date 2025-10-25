@@ -1,11 +1,10 @@
 import { slideUp, staggering } from "../styles/animation";
 
-import { motion } from "framer-motion";
-import React from "react";
-import styled from "styled-components";
-import { Container } from "../styles/GlobalStyle";
-import { useScroll } from "../utils/useScroll";
 import { Cards } from "./Services";
+import { Container } from "../styles/GlobalStyle";
+import { motion } from "framer-motion";
+import styled from "styled-components";
+import { useScroll } from "../utils/useScroll";
 
 export default function About() {
   const [element, controls] = useScroll();
@@ -14,7 +13,7 @@ export default function About() {
       <motion.h1 variants={slideUp}>About Us</motion.h1>
       <div className="blue-bg"></div>
       <AboutCards>
-        <motion.a variants={slideUp}>
+        <motion.a variants={slideUp} href="/executive-summary" target="_blank">
           <div className="card">
             <div className="color-overlay"></div>
             <h2>Our Vision</h2>
