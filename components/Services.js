@@ -1,10 +1,9 @@
 import { FaChurch, FaCubes } from "react-icons/fa";
 import { slideUp, staggering } from "../styles/animation";
 
-import { motion } from "framer-motion";
-import React from "react";
-import styled from "styled-components";
 import { Container } from "../styles/GlobalStyle";
+import { motion } from "framer-motion";
+import styled from "styled-components";
 import { useScroll } from "../utils/useScroll";
 
 export default function Services() {
@@ -20,7 +19,7 @@ export default function Services() {
           <div className="card">
             <div className="color-overlay"></div>
             <FaChurch className="icon" />
-            <h3>Church</h3>
+            <h3>Community</h3>
           </div>
         </motion.a>
         {/* <motion.a
@@ -38,7 +37,7 @@ export default function Services() {
           <div className="card">
             <div className="color-overlay"></div>
             <FaCubes className="icon" />
-            <h3>Foundation</h3>
+            <h3>Philanthropy</h3>
           </div>
         </motion.a>
       </Cards>
