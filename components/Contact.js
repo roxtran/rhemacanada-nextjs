@@ -1,9 +1,8 @@
 import { slideUp, staggering } from "../styles/animation";
 
-import { motion } from "framer-motion";
-import React from "react";
-import styled from "styled-components";
 import { Container } from "../styles/GlobalStyle";
+import { motion } from "framer-motion";
+import styled from "styled-components";
 import { useScroll } from "../utils/useScroll";
 
 export default function Contact() {
@@ -17,7 +16,7 @@ export default function Contact() {
           <motion.h2 variants={slideUp}>Toronto Headquarter</motion.h2>
           <div className="line"></div>
           <motion.p variants={slideUp} className="address">
-            3858 Chesswood Drive, North York, ON, M3J 2W6
+            300 Steeprock Drive, North York, ON, M3J 2X1
           </motion.p>
           <div className="info">
             <motion.p variants={slideUp}>
@@ -40,7 +39,7 @@ export default function Contact() {
         </div>
         <motion.div variants={slideUp} className="map-wrapper">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.835652908633!2d-79.47637759999999!3d43.7555095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b31fbd6b34c8b%3A0x2021c91c91d3ec98!2s3858%20Chesswood%20Dr%2C%20North%20York%2C%20ON%20M3J%202W6!5e0!3m2!1sen!2sca!4v1729265929089!5m2!1sen!2sca"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.640830846871!2d-79.47383732239607!3d43.759554771097235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b31ff9d007ce9%3A0xcd7be29f3c03339c!2s300%20Steeprock%20Dr%2C%20North%20York%2C%20ON%20M3J%202X1!5e0!3m2!1sen!2sca!4v1777694921621!5m2!1sen!2sca"
             width="1000"
             height="420"
             style={{ border: 0 }}
