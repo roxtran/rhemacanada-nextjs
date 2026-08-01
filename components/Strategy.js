@@ -3,7 +3,6 @@ import { slideUp, staggering } from "../styles/animation";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import React from "react";
 import styled from "styled-components";
 import { useScroll } from "../utils/useScroll";
 
@@ -42,7 +41,7 @@ export default function Strategy() {
           </motion.p>
         </div>
         <ImgWrapper variants={slideUp}>
-          <Image src="/img/strategy.jpg" layout="fill" objectFit="cover" placeholder="blur" />
+          <Image src="/img/strategy.jpg" layout="fill" objectFit="cover" />
         </ImgWrapper>
       </div>
     </StyledStrategy>

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { boardMembers, executiveManagementTeam, reportingToTheBoard } from "../data/leaders";
+import { executiveManagementTeam } from "../data/leaders";
 import { slideUp, staggering } from "../styles/animation";
 import { Container, ImgWrapper } from "../styles/GlobalStyle";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
 import { useScroll } from "../utils/useScroll";
 import LeaderModal from "./LeaderModal";
@@ -41,7 +41,7 @@ export default function Leadership() {
                     }}
                   >
                     <ImgWrapper>
-                      <Image src={leader.smallImg} layout="fill" objectFit="cover" placeholder="blur" />
+                      <Image src={leader.smallImg} layout="fill" objectFit="cover" />
                     </ImgWrapper>
                     <p className="name">{leader.name}</p>
                     <p className="title">{leader.title}</p>
@@ -53,7 +53,7 @@ export default function Leadership() {
                 ))}
               </div>
             </motion.div>
-            <div label="Board Members">
+            {/* <div label="Board Members">
               <motion.p className="desc" variants={slideUp}>
                 Tasked with overall governance, our Executive Board ensures that through fiduciary duty, oversight and
                 strategic policies, the vision of our organization is realized. Meet the members of our board who are
@@ -106,7 +106,7 @@ export default function Leadership() {
                   </motion.a>
                 ))}
               </div>
-            </div>
+            </div> */}
           </Tabs>
         </div>
       </StyledLeadership>

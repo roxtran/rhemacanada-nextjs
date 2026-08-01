@@ -54,7 +54,7 @@ export default function LeaderModal({ showModal, setShowModal, leader }) {
                     layout="fill"
                     objectFit="cover"
                     objectPosition="top"
-                    placeholder="blur"
+                    // placeholder="blur"
                   />
                 </figure>
                 <h2 className="name">{leader.name}</h2>

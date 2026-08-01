@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
 import { fade, slideUp } from "../styles/animation";
 
@@ -58,7 +58,7 @@ export default function Hero() {
                     layout="fill"
                     objectFit="cover"
                     objectPosition="top"
-                    placeholder="blur"
+                    // placeholder="blur"
                     // loading='eager'
                     priority="preload"
                   />

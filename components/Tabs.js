@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 export default function Tabs({ children }) {
-  const [activeTab, setActiveTab] = useState(children[0].props.label);
+  const tabs = React.Children.toArray(children).filter(Boolean);
+  const [activeTab, setActiveTab] = useState(() => tabs[0]?.props?.label ?? "");
 
   const handleClick = (newActiveTab) => {
     setActiveTab(newActiveTab);
@@ -12,21 +13,25 @@ export default function Tabs({ children }) {
   return (
     <StyledTabs>
       <div className="tabs">
-        {children.map((tab) => (
-          <a
-            onClick={() => handleClick(tab.props.label)}
-            className={tab.props.label === activeTab ? "tab current" : "tab"}
-            key={tab.props.label}
-          >
-            {tab.props.label}
-          </a>
-        ))}
+        {tabs.map((tab) => {
+          const label = tab.props?.label;
+
+          return (
+            <a onClick={() => handleClick(label)} className={label === activeTab ? "tab current" : "tab"} key={label}>
+              {label}
+            </a>
+          );
+        })}
         {/* <div className='tab current'>Executive Management Team</div>
         <div className='tab'>Executive Board</div> */}
       </div>
       <div className="tab-content">
-        {children.map((content) => {
-          if (content.props.label === activeTab) return <div key={content.props.label}>{content}</div>;
+        {tabs.map((content) => {
+          if (content.props?.label === activeTab) {
+            return <div key={content.props?.label}>{content}</div>;
+          }
+
+          return null;
         })}
       </div>
     </StyledTabs>
