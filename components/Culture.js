@@ -1,9 +1,8 @@
 import { slideUp, staggering } from "../styles/animation";
 
-import { motion } from "framer-motion";
-import React from "react";
-import styled from "styled-components";
 import { Container } from "../styles/GlobalStyle";
+import { motion } from "framer-motion";
+import styled from "styled-components";
 import { useScroll } from "../utils/useScroll";
 
 export default function Culture() {
@@ -16,7 +15,7 @@ export default function Culture() {
           <motion.h1 variants={slideUp}>Our Culture</motion.h1>
         </a>
       </div>
-      <div className="wrapper">
+      {/* <div className="wrapper">
         <motion.a
           href="http://cms.rhemacanada.com/rhemacanada/wp-content/uploads/2024/07/RCM-of-Canada-Inc_By-Law_Final-20240718-1.pdf"
           target="_blank"
@@ -31,7 +30,7 @@ export default function Culture() {
         >
           <h3>Constitution</h3>
         </motion.a>
-      </div>
+      </div> */}
     </StyledCulture>
   );
 }
